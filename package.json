@@ -1,0 +1,49 @@
+{
+  "name": "25th-anniversary-website",
+  "version": "1.0.0",
+  "description": "어린이도서연구회 은평지회 25주년 기념 웹사이트",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "npm run clean && npm run copy-files && npm run minify",
+    "clean": "rm -rf dist",
+    "copy-files": "mkdir -p dist && cp -r index.html pages css js assets dist/",
+    "minify": "npm run minify-css && npm run minify-js",
+    "minify-css": "cleancss -o dist/css/main.min.css dist/css/*.css",
+    "minify-js": "terser dist/js/*.js -c -m -o dist/js/main.min.js",
+    "optimize-images": "imagemin assets/images/* --out-dir=dist/assets/images",
+    "preview": "cd dist && python -m http.server 8001",
+    "deploy": "npm run build && gh-pages -d dist",
+    "test": "echo 'No tests specified'",
+    "lint": "eslint js/**/*.js",
+    "format": "prettier --write \"**/*.{html,css,js,json}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/25th-anniversary-website.git"
+  },
+  "keywords": [
+    "어린이도서연구회",
+    "은평지회",
+    "25주년",
+    "기념웹사이트"
+  ],
+  "author": "어린이도서연구회 은평지회",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.24.0",
+    "imagemin-cli": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "gh-pages": "^6.0.0",
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {},
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

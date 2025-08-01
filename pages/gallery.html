@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>갤러리 - 어린이도서연구회 은평지회</title>
+    <meta name="description" content="어린이도서연구회 은평지회의 25년간 활동 사진과 추억들">
+    <meta name="keywords" content="어린이도서연구회, 은평지회, 갤러리, 활동사진">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Gallery Data -->
+    <script src="../js/gallery-data.js"></script>
+</head>
+<body>
+    <!-- Skip to Main Content -->
+    <a href="#main" class="skip-link">본문으로 바로가기</a>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="../index.html" class="header__logo">
+                    <img src="../assets/images/logo.png" alt="어린이도서연구회 로고" class="header__logo-image">
+                    <span>은평지회</span>
+                </a>
+                
+                <nav class="nav" id="mainNav">
+                    <a href="../index.html" class="nav__link">홈</a>
+                    <a href="./about.html" class="nav__link">소개</a>
+                    <a href="./history.html" class="nav__link">25년 역사</a>
+                    <a href="./event.html" class="nav__link">행사 안내</a>
+                    <a href="./program.html" class="nav__link">프로그램</a>
+                    <a href="./gallery.html" class="nav__link active">갤러리</a>
+                    <a href="./register.html" class="nav__link">참가 신청</a>
+                </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__header">
+            <span class="mobile-nav__title">메뉴</span>
+            <button class="mobile-nav__close" id="mobileNavClose" aria-label="메뉴 닫기">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"/>
+                    <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-nav__body">
+            <a href="../index.html" class="mobile-nav__link">홈</a>
+            <a href="./about.html" class="mobile-nav__link">소개</a>
+            <a href="./history.html" class="mobile-nav__link">25년 역사</a>
+            <a href="./event.html" class="mobile-nav__link">행사 안내</a>
+            <a href="./program.html" class="mobile-nav__link">프로그램</a>
+            <a href="./gallery.html" class="mobile-nav__link active">갤러리</a>
+            <a href="./register.html" class="mobile-nav__link">참가 신청</a>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title" data-aos="fade-up">갤러리</h1>
+                <p class="page-header__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    25년간의 소중한 순간들을 사진으로 만나보세요
+                </p>
+            </div>
+        </section>
+        
+        <!-- Gallery Section -->
+        <section class="section">
+            <div class="container">
+                <!-- Gallery Filters -->
+                <div class="gallery-filters" data-aos="fade-up">
+                    <button class="filter-btn filter-btn--active" data-filter="all">
+                        <span>전체</span>
+                        <span class="filter-count">150</span>
+                    </button>
+                    <button class="filter-btn" data-filter="events">
+                        <span>행사 사진</span>
+                        <span class="filter-count">60</span>
+                    </button>
+                    <button class="filter-btn" data-filter="activities">
+                        <span>활동 사진</span>
+                        <span class="filter-count">45</span>
+                    </button>
+                    <button class="filter-btn" data-filter="history">
+                        <span>역사적 순간</span>
+                        <span class="filter-count">25</span>
+                    </button>
+                    <button class="filter-btn" data-filter="members">
+                        <span>회원 활동</span>
+                        <span class="filter-count">20</span>
+                    </button>
+                </div>
+                
+                <!-- Subcategory Filters -->
+                <div class="subcategory-filters" data-aos="fade-up" data-aos-delay="50">
+                    <div class="subcategory-group" data-category="events" style="display: none;">
+                        <button class="subfilter-btn subfilter-btn--active" data-subfilter="all">전체</button>
+                        <button class="subfilter-btn" data-subfilter="autumn-sports">가을 운동회 (30)</button>
+                        <button class="subfilter-btn" data-subfilter="regular-meetings">정기모임 (20)</button>
+                        <button class="subfilter-btn" data-subfilter="special-events">특별행사 (10)</button>
+                    </div>
+                    <div class="subcategory-group" data-category="activities" style="display: none;">
+                        <button class="subfilter-btn subfilter-btn--active" data-subfilter="all">전체</button>
+                        <button class="subfilter-btn" data-subfilter="volunteer">봉사활동 (20)</button>
+                        <button class="subfilter-btn" data-subfilter="reading">독서모임 (15)</button>
+                        <button class="subfilter-btn" data-subfilter="author-meetings">작가와의 만남 (10)</button>
+                    </div>
+                    <div class="subcategory-group" data-category="history" style="display: none;">
+                        <button class="subfilter-btn subfilter-btn--active" data-subfilter="all">전체</button>
+                        <button class="subfilter-btn" data-subfilter="founding">창립 (5)</button>
+                        <button class="subfilter-btn" data-subfilter="anniversaries">주년 기념 (15)</button>
+                        <button class="subfilter-btn" data-subfilter="milestones">주요 이벤트 (5)</button>
+                    </div>
+                    <div class="subcategory-group" data-category="members" style="display: none;">
+                        <button class="subfilter-btn subfilter-btn--active" data-subfilter="all">전체</button>
+                        <button class="subfilter-btn" data-subfilter="workshops">워크샵 (10)</button>
+                        <button class="subfilter-btn" data-subfilter="exhibitions">전시회 (5)</button>
+                        <button class="subfilter-btn" data-subfilter="gatherings">모임 (5)</button>
+                    </div>
+                </div>
+                
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="galleryGrid" data-aos="fade-up" data-aos-delay="100">
+                    <!-- 갤러리 아이템들은 JavaScript로 동적 생성됩니다 -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="gallery-footer" data-aos="fade-up">
+                    <button class="btn btn--outline" id="loadMoreBtn">
+                        더 많은 사진 보기
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" id="lightboxClose">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <div class="lightbox__content">
+            <img src="" alt="" id="lightboxImage">
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3>어린이도서연구회 은평지회</h3>
+                    <p>
+                        1999년부터 시작된 우리의 이야기<br>
+                        함께 읽고, 함께 자라는 공동체
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>행사 정보</h3>
+                    <p>
+                        <strong>일시:</strong> 2025년 9월 20일 (토)<br>
+                        <strong>장소:</strong> 팀수양관<br>
+                        <strong>주소:</strong> 서울 은평구 불광로18길 23
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>문의하기</h3>
+                    <p>
+                        <strong>이메일:</strong> contact@eunpyeong25.com<br>
+                        <strong>Instagram:</strong> @ep_childrensbook<br>
+                        <strong>Daum Cafe:</strong> cafe.daum.net/childbook63<br>
+                        <strong>정기모임 장소:</strong><br>
+                        서울 은평구 진흥로 133 B동 B1층<br>
+                        <a href="https://naver.me/xBsBswcP" target="_blank" style="color: rgba(255, 255, 255, 0.8); text-decoration: underline;">네이버 지도 보기</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 어린이도서연구회 은평지회. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script src="../js/gallery.js" defer></script>
+    
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 107, 0.1) 0%, 
+                rgba(255, 217, 61, 0.1) 100%);
+            padding: var(--space-20) 0 var(--space-16);
+            margin-top: 80px;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            gap: var(--space-3);
+            justify-content: center;
+            margin-bottom: var(--space-8);
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-full);
+            font-size: var(--text-sm);
+            font-weight: var(--font-medium);
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            transition: var(--transition-all);
+        }
+        
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .filter-btn--active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        .filter-count {
+            padding: 0 var(--space-2);
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: var(--radius-full);
+            font-size: var(--text-xs);
+        }
+        
+        .filter-btn--active .filter-count {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-12);
+        }
+        
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            }
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            background: var(--color-background);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: var(--transition-all);
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .gallery-item[data-category]:not([data-category="all"]) {
+            display: block;
+        }
+        
+        .gallery-item--hidden {
+            display: none !important;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition-all);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item__overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
+            color: white;
+            padding: var(--space-6);
+            transform: translateY(100%);
+            transition: var(--transition-all);
+        }
+        
+        .gallery-item:hover .gallery-item__overlay {
+            transform: translateY(0);
+        }
+        
+        .gallery-item__overlay h3 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-2);
+        }
+        
+        .gallery-item__overlay p {
+            font-size: var(--text-sm);
+            opacity: 0.9;
+            margin-bottom: var(--space-3);
+        }
+        
+        .gallery-item__zoom {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: var(--transition-all);
+        }
+        
+        .gallery-item:hover .gallery-item__zoom {
+            opacity: 1;
+        }
+        
+        .gallery-item__zoom:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+        
+        .gallery-footer {
+            text-align: center;
+            margin-top: var(--space-8);
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: var(--z-modal);
+            padding: var(--space-8);
+            cursor: zoom-out;
+        }
+        
+        .lightbox--active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fade-in 0.3s ease;
+        }
+        
+        .lightbox__close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: var(--radius-full);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition-all);
+        }
+        
+        .lightbox__close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+        
+        .lightbox__content {
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lightbox__content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+            animation: zoom-in 0.3s ease;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes zoom-in {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* Subcategory Filter Styles */
+        .subcategory-filters {
+            margin-top: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+        
+        .subcategory-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .subfilter-btn {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: var(--transition-all);
+        }
+        
+        .subfilter-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        .subfilter-btn--active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>

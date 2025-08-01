@@ -1,0 +1,191 @@
+/* 
+ * Performance Optimization Stylesheet
+ * 어린이도서연구회 은평지회 25주년 기념 웹사이트
+ */
+
+/* ==========================================================================
+   Critical CSS - Above the fold content
+   ========================================================================== */
+
+/* Prevent layout shift for images */
+img {
+  aspect-ratio: attr(width) / attr(height);
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-display: swap; /* Show fallback font immediately */
+}
+
+/* ==========================================================================
+   Resource Hints
+   ========================================================================== */
+
+/* Preconnect to external resources */
+link[rel="preconnect"] {
+  crossorigin: anonymous;
+}
+
+/* ==========================================================================
+   GPU Acceleration
+   ========================================================================== */
+
+/* Hardware acceleration for smooth animations */
+.hero__badge,
+.card,
+.feature-card,
+.btn,
+.program-card {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ==========================================================================
+   Image Optimization
+   ========================================================================== */
+
+/* Lazy loading for images below the fold */
+img[loading="lazy"] {
+  background: var(--color-background-alt);
+  min-height: 100px;
+}
+
+/* Responsive images */
+.hero__logo,
+.header__logo-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* ==========================================================================
+   Animation Performance
+   ========================================================================== */
+
+/* Use transform instead of position for animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateY(-10px) translateZ(0);
+  }
+}
+
+/* Reduce paint areas */
+.hero__leaves {
+  isolation: isolate;
+}
+
+/* ==========================================================================
+   Mobile Performance
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Disable complex animations on mobile */
+  .hero__badge {
+    animation: none;
+  }
+  
+  /* Simplify shadows on mobile */
+  .card,
+  .feature-card,
+  .btn {
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* Reduce blur effects on mobile */
+  .header {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.98);
+  }
+}
+
+/* ==========================================================================
+   Network-aware CSS
+   ========================================================================== */
+
+/* Reduce quality for slow connections */
+@media (prefers-reduced-data: reduce) {
+  /* Use solid colors instead of gradients */
+  .hero {
+    background: var(--color-background-alt);
+  }
+  
+  /* Disable decorative images */
+  .hero__leaves {
+    display: none;
+  }
+  
+  /* Simplify animations */
+  * {
+    animation-duration: 0.1s !important;
+  }
+}
+
+/* ==========================================================================
+   Print Optimization
+   ========================================================================== */
+
+@media print {
+  /* Remove unnecessary elements */
+  .header,
+  .footer,
+  .btn,
+  .loading-screen,
+  .back-to-top {
+    display: none !important;
+  }
+  
+  /* Optimize for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.5;
+    color: black;
+    background: white;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+  
+  /* Page breaks */
+  .section {
+    page-break-after: auto;
+    page-break-inside: avoid;
+  }
+}
+
+/* ==========================================================================
+   Core Web Vitals Optimization
+   ========================================================================== */
+
+/* Cumulative Layout Shift (CLS) prevention */
+.swiper-wrapper {
+  min-height: 300px;
+}
+
+.event-info__grid,
+.features__grid,
+.program-grid {
+  min-height: 200px;
+}
+
+/* First Input Delay (FID) optimization */
+button,
+a,
+input,
+textarea,
+select {
+  touch-action: manipulation; /* Prevent 300ms delay on mobile */
+}
+
+/* Largest Contentful Paint (LCP) optimization */
+.hero__content {
+  contain: layout style paint;
+}

@@ -1,0 +1,248 @@
+/* 
+ * 어린이도서연구회 은평지회 25주년 기념 웹사이트
+ * Design System Variables
+ */
+
+:root {
+  /* ==========================================================================
+     Color Palette
+     ========================================================================== */
+  
+  /* Primary Colors - 가을의 따뜻함 */
+  --color-primary: #D2691E;        /* 초콜릿 브라운 - 따뜻하고 고급스러운 */
+  --color-primary-light: #DEB887;
+  --color-primary-dark: #A0522D;
+  --color-primary-rgb: 210, 105, 30;
+  
+  /* Secondary Colors - 가을의 풍요로움 */
+  --color-secondary: #F4A460;      /* 샌디 브라운 - 부드럽고 따뜻한 */
+  --color-secondary-light: #FFDAB9;
+  --color-secondary-dark: #CD853F;
+  --color-secondary-rgb: 244, 164, 96;
+  
+  /* Accent Colors - 생동감 */
+  --color-accent: #8FBC8F;         /* 다크 시 그린 - 자연스럽고 편안한 */
+  --color-accent-light: #98FB98;
+  --color-accent-dark: #556B2F;
+  --color-accent-rgb: 143, 188, 143;
+  
+  /* Neutral Colors - 더 따뜻하고 부드러운 톤 */
+  --color-text-primary: #3E2723;
+  --color-text-secondary: #5D4037;
+  --color-text-light: #795548;
+  --color-background: #FFF8F3;      /* 아주 연한 크림색 배경 */
+  --color-background-alt: #FFF5EE;  /* 시쉘 색상 */
+  --color-background-dark: #FAF0E6; /* 리넨 색상 */
+  --color-border: #E8DDD5;
+  
+  /* Semantic Colors */
+  --color-success: #27AE60;
+  --color-warning: #F39C12;
+  --color-error: #E74C3C;
+  --color-info: #3498DB;
+  
+  /* ==========================================================================
+     Typography
+     ========================================================================== */
+  
+  /* Font Families */
+  --font-primary: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-secondary: 'Noto Serif KR', serif;
+  --font-display: 'Jua', 'Comic Sans MS', cursive;
+  --font-mono: 'D2Coding', 'Consolas', monospace;
+  
+  /* Font Sizes - Fluid Typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --text-3xl: clamp(2rem, 1.7rem + 1.5vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 2rem + 2.5vw, 3.5rem);
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+  
+  /* Font Weights */
+  --font-thin: 100;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.75;
+  --leading-loose: 2;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* ==========================================================================
+     Spacing System (8px base)
+     ========================================================================== */
+  
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* ==========================================================================
+     Layout
+     ========================================================================== */
+  
+  /* Container Widths */
+  --container-xs: 320px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1536px;
+  --container-max: 1400px;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 320px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* Grid */
+  --grid-columns: 12;
+  --grid-gap: var(--space-6);
+  
+  /* ==========================================================================
+     Borders & Radius
+     ========================================================================== */
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
+  
+  /* Border Width */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  
+  /* ==========================================================================
+     Shadows
+     ========================================================================== */
+  
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* Colored Shadows */
+  --shadow-primary: 0 10px 25px -5px rgba(var(--color-primary-rgb), 0.3);
+  --shadow-secondary: 0 10px 25px -5px rgba(var(--color-secondary-rgb), 0.3);
+  --shadow-accent: 0 10px 25px -5px rgba(var(--color-accent-rgb), 0.3);
+  
+  /* ==========================================================================
+     Transitions & Animations
+     ========================================================================== */
+  
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+  
+  /* Timing Functions */
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  /* Standard Transitions */
+  --transition-all: all var(--duration-normal) var(--ease-in-out);
+  --transition-colors: background-color, border-color, color, fill, stroke var(--duration-normal) var(--ease-in-out);
+  --transition-opacity: opacity var(--duration-normal) var(--ease-in-out);
+  --transition-transform: transform var(--duration-normal) var(--ease-in-out);
+  
+  /* ==========================================================================
+     Z-Index Scale
+     ========================================================================== */
+  
+  --z-base: 0;
+  --z-dropdown: 10;
+  --z-sticky: 20;
+  --z-fixed: 30;
+  --z-overlay: 40;
+  --z-modal: 50;
+  --z-popover: 60;
+  --z-tooltip: 70;
+  --z-notification: 80;
+  --z-top: 90;
+  
+  /* ==========================================================================
+     Effects
+     ========================================================================== */
+  
+  /* Blur */
+  --blur-sm: 4px;
+  --blur-md: 8px;
+  --blur-lg: 16px;
+  --blur-xl: 24px;
+  
+  /* Opacity */
+  --opacity-0: 0;
+  --opacity-10: 0.1;
+  --opacity-25: 0.25;
+  --opacity-50: 0.5;
+  --opacity-75: 0.75;
+  --opacity-90: 0.9;
+  --opacity-100: 1;
+}
+
+/* ==========================================================================
+   Dark Mode Variables (Optional)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #F0F3F7;
+    --color-text-secondary: #B8C5D6;
+    --color-text-light: #8B9AAD;
+    --color-background: #1A202C;
+    --color-background-alt: #2D3748;
+    --color-background-dark: #171923;
+    --color-border: #2D3748;
+  }
+}
+
+/* ==========================================================================
+   Utility Classes for CSS Variables
+   ========================================================================== */
+
+.theme-autumn {
+  --color-primary: #D2691E;
+  --color-secondary: #FF8C00;
+  --color-accent: #8B4513;
+}
