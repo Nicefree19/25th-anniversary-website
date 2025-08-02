@@ -276,6 +276,36 @@
     --shadow-primary: 0 10px 25px -5px rgba(var(--color-primary-rgb), 0.4);
     --shadow-secondary: 0 10px 25px -5px rgba(var(--color-secondary-rgb), 0.4);
     --shadow-accent: 0 10px 25px -5px rgba(var(--color-accent-rgb), 0.4);
+    
+    /* Premium Effects - 다크 모드 전용 */
+    --premium-glow-primary: 0 0 20px rgba(var(--color-primary-rgb), 0.6);
+    --premium-glow-secondary: 0 0 15px rgba(var(--color-secondary-rgb), 0.4);
+    --premium-glow-accent: 0 0 10px rgba(var(--color-accent-rgb), 0.3);
+    
+    /* Glass Effect - 다크 모드 최적화 */
+    --glass-background-dark: rgba(15, 15, 35, 0.4);
+    --glass-background-hover-dark: rgba(26, 27, 58, 0.6);
+    --glass-border-dark: rgba(249, 115, 22, 0.2);
+    --glass-border-hover-dark: rgba(249, 115, 22, 0.5);
+    
+    /* Particle System - 다크 모드 */
+    --particle-glow: rgba(var(--color-primary-rgb), 0.8);
+    --particle-trail: rgba(var(--color-primary-rgb), 0.4);
+    
+    /* Typography - 다크 모드 */
+    --text-glow-primary: 0 0 10px var(--color-primary);
+    --text-glow-secondary: 0 0 8px var(--color-secondary);
+    --text-shadow-depth: 0 4px 20px rgba(0, 0, 0, 0.8);
+    
+    /* Cursor - 다크 모드 */
+    --cursor-glow: var(--color-primary);
+    --cursor-trail: rgba(var(--color-primary-rgb), 0.6);
+    --cursor-ripple: rgba(var(--color-primary-rgb), 0.8);
+    
+    /* 3D Effects - 다크 모드 */
+    --depth-shadow-primary: 0 20px 40px rgba(0, 0, 0, 0.6);
+    --depth-shadow-secondary: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --depth-glow: 0 0 30px rgba(var(--color-primary-rgb), 0.3);
   }
 }
 
