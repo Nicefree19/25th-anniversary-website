@@ -295,6 +295,135 @@
 }
 
 /* 애니메이션 정의 */
+/* ==========================================================================
+   Dark Mode Optimizations for Program Page
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    .page-header {
+        background: linear-gradient(135deg, #1a1b3a 0%, #2d2f5a 100%);
+    }
+
+    .page-header__title {
+        color: var(--color-text-primary);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .program-section__title {
+        color: var(--color-text-primary);
+    }
+
+    .program-section__title::after {
+        background: var(--color-primary);
+        box-shadow: 0 0 10px rgba(var(--color-primary-rgb), 0.5);
+    }
+
+    .game-card {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-primary);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .game-card:hover {
+        border-color: var(--color-primary);
+        box-shadow: 0 6px 30px rgba(var(--color-primary-rgb), 0.3);
+    }
+
+    .game-card__title {
+        color: var(--color-text-primary);
+    }
+
+    .game-card__theme {
+        background: rgba(var(--color-primary-rgb), 0.2);
+        color: var(--color-primary);
+        border: 1px solid rgba(var(--color-primary-rgb), 0.3);
+    }
+
+    .game-card__description,
+    .game-card__prep {
+        color: var(--color-text-secondary);
+    }
+
+    .special-program {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+    }
+
+    .special-program__item {
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
+    }
+
+    .special-program__item:hover {
+        border-color: var(--color-primary);
+        box-shadow: 0 8px 25px rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .special-program__content h3 {
+        color: var(--color-text-primary);
+    }
+
+    .special-program__content p {
+        color: var(--color-text-secondary);
+    }
+
+    .timeline {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .timeline__title {
+        color: var(--color-text-primary);
+    }
+
+    .timeline__section h4 {
+        color: var(--color-primary);
+    }
+
+    .timeline__item {
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
+    }
+
+    .timeline__item:hover {
+        background: rgba(var(--color-primary-rgb), 0.05);
+        border-color: var(--color-primary);
+    }
+
+    .timeline__time {
+        color: var(--color-text-primary);
+        font-weight: var(--font-semibold);
+    }
+
+    .timeline__content {
+        color: var(--color-text-secondary);
+    }
+
+    /* Image optimizations for dark mode */
+    .game-card__image,
+    .special-program__image {
+        filter: brightness(0.9) contrast(1.1);
+        border: 1px solid var(--color-border);
+    }
+
+    .game-card:hover .game-card__image,
+    .special-program__item:hover .special-program__image {
+        filter: brightness(1) contrast(1.2);
+        border-color: var(--color-primary);
+    }
+
+    /* Enhanced icon visibility */
+    .game-card__icon {
+        filter: drop-shadow(0 2px 8px rgba(var(--color-primary-rgb), 0.3));
+    }
+
+    .game-card:hover .game-card__icon {
+        filter: drop-shadow(0 4px 12px rgba(var(--color-primary-rgb), 0.5));
+    }
+}
+
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }

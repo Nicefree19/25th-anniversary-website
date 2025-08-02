@@ -1,0 +1,271 @@
+/* Index Page Specific Styles */
+
+/* Hero Section Enhancements */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 25px,
+            rgba(210, 105, 30, 0.02) 25px,
+            rgba(210, 105, 30, 0.02) 50px
+        );
+    pointer-events: none;
+}
+
+/* Confetti decoration for registration buttons */
+.hero__actions {
+    position: relative;
+}
+
+.hero__actions::before,
+.hero__actions::after,
+.cta__content > .btn--secondary::before,
+.cta__content > .btn--secondary::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: url('../assets/images/event-images/apply_button_confetti.png') no-repeat center/contain;
+    pointer-events: none;
+    z-index: 1;
+    animation: confetti-float 3s ease-in-out infinite;
+}
+
+.hero__actions::before {
+    top: -30px;
+    left: -40px;
+    transform: rotate(-15deg);
+}
+
+.hero__actions::after {
+    bottom: -30px;
+    right: -40px;
+    transform: rotate(15deg);
+    animation-delay: 1.5s;
+}
+
+.cta__content {
+    position: relative;
+}
+
+.cta__content > .btn--secondary::before {
+    top: -25px;
+    left: -45px;
+    transform: rotate(25deg);
+}
+
+.cta__content > .btn--secondary::after {
+    bottom: -25px;
+    right: -45px;
+    transform: rotate(-25deg);
+    animation-delay: 1s;
+}
+
+@keyframes confetti-float {
+    0%, 100% {
+        transform: translateY(0) rotate(var(--rotation, 0deg));
+    }
+    50% {
+        transform: translateY(-10px) rotate(calc(var(--rotation, 0deg) + 5deg));
+    }
+}
+
+.hero__actions::before { --rotation: -15deg; }
+.hero__actions::after { --rotation: 15deg; }
+.cta__content > .btn--secondary::before { --rotation: 25deg; }
+.cta__content > .btn--secondary::after { --rotation: -25deg; }
+
+/* Ensure buttons have proper z-index */
+.btn--primary,
+.btn--secondary {
+    position: relative;
+    z-index: 2;
+}
+
+/* Back to Top Button Enhancement */
+.back-to-top {
+    background: linear-gradient(
+        135deg,
+        var(--color-primary) 0%,
+        var(--color-primary-dark) 100%
+    );
+    box-shadow: 
+        0 4px 15px rgba(210, 105, 30, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 6px 20px rgba(210, 105, 30, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   Dark Mode Optimizations for Index Page
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* Hero Section Dark Mode */
+    .hero::after {
+        background-image: 
+            repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 25px,
+                rgba(249, 115, 22, 0.05) 25px,
+                rgba(249, 115, 22, 0.05) 50px
+            );
+    }
+
+    /* Hero Content */
+    .hero__title {
+        color: var(--color-text-primary);
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero__subtitle {
+        color: var(--color-text-secondary);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Hero Gradient Overlays */
+    .hero__content::before {
+        background: linear-gradient(
+            135deg,
+            rgba(15, 15, 35, 0.3) 0%,
+            rgba(26, 27, 58, 0.2) 100%
+        );
+    }
+
+    /* Info Cards Dark Mode */
+    .info-grid .info-card {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+        color: var(--color-text-primary);
+    }
+
+    .info-card:hover {
+        border-color: var(--color-primary);
+        box-shadow: 0 20px 40px rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .info-card__icon {
+        background: rgba(var(--color-primary-rgb), 0.2);
+        color: var(--color-primary);
+        border: 2px solid rgba(var(--color-primary-rgb), 0.3);
+    }
+
+    .info-card__title {
+        color: var(--color-text-primary);
+    }
+
+    .info-card__description {
+        color: var(--color-text-secondary);
+    }
+
+    /* CTA Section Dark Mode */
+    .cta {
+        background: linear-gradient(
+            135deg,
+            var(--color-background-dark) 0%,
+            var(--color-background-alt) 100%
+        );
+        border-top: 1px solid var(--color-border);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .cta__title {
+        color: var(--color-text-primary);
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .cta__description {
+        color: var(--color-text-secondary);
+    }
+
+    /* Confetti Background Adjustments for Dark Mode */
+    .hero__actions::before,
+    .hero__actions::after,
+    .cta__content > .btn--secondary::before,
+    .cta__content > .btn--secondary::after {
+        filter: brightness(1.2) contrast(1.1);
+        opacity: 0.8;
+    }
+
+    .hero__actions:hover::before,
+    .hero__actions:hover::after,
+    .cta__content > .btn--secondary:hover::before,
+    .cta__content > .btn--secondary:hover::after {
+        filter: brightness(1.4) contrast(1.2);
+        opacity: 1;
+    }
+
+    /* Back to Top Button Dark Mode */
+    .back-to-top {
+        background: linear-gradient(
+            135deg,
+            var(--color-primary) 0%,
+            var(--color-primary-dark) 100%
+        );
+        border: 1px solid var(--color-border);
+        box-shadow: 
+            0 4px 15px rgba(var(--color-primary-rgb), 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .back-to-top:hover {
+        box-shadow: 
+            0 6px 20px rgba(var(--color-primary-rgb), 0.5),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    /* Gallery Section Dark Mode */
+    .gallery-preview {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+    }
+
+    .gallery-item {
+        border: 1px solid var(--color-border);
+    }
+
+    .gallery-item:hover {
+        border-color: var(--color-primary);
+    }
+
+    .gallery-item img {
+        filter: brightness(0.9) contrast(1.1);
+    }
+
+    .gallery-item:hover img {
+        filter: brightness(1) contrast(1.2);
+    }
+
+    /* Progress and Loading Elements */
+    .progress-bar {
+        background: var(--color-background-alt);
+        border: 1px solid var(--color-border);
+    }
+
+    .progress-fill {
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    }
+
+    /* Enhanced Focus States for Dark Mode */
+    .btn:focus-visible {
+        outline: 2px solid var(--color-primary);
+        outline-offset: 2px;
+        box-shadow: 0 0 0 4px rgba(var(--color-primary-rgb), 0.2);
+    }
+
+    .info-card:focus-within {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 2px rgba(var(--color-primary-rgb), 0.2);
+    }
+}

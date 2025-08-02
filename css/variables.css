@@ -227,13 +227,55 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-text-primary: #F0F3F7;
-    --color-text-secondary: #B8C5D6;
-    --color-text-light: #8B9AAD;
-    --color-background: #1A202C;
-    --color-background-alt: #2D3748;
-    --color-background-dark: #171923;
-    --color-border: #2D3748;
+    /* Text Colors - 높은 대비와 가독성 */
+    --color-text-primary: #FFFFFF;        /* 순백색 - 최고 가독성 */
+    --color-text-secondary: #E2E8F0;      /* 밝은 회색 - 부제목 */
+    --color-text-light: #CBD5E0;          /* 중간 회색 - 보조 텍스트 */
+    
+    /* Background Colors - 깊이와 계층 */
+    --color-background: #0F0F23;          /* 매우 어두운 남색 - 눈의 피로 최소화 */
+    --color-background-alt: #1A1B3A;      /* 카드 배경 */
+    --color-background-dark: #0A0A1A;     /* 최고 어두운 배경 */
+    
+    /* Border Colors */
+    --color-border: #374151;              /* 선명한 테두리 */
+    
+    /* Primary Colors - 다크 모드 최적화 */
+    --color-primary: #F97316;             /* 밝은 오렌지 - 더 선명 */
+    --color-primary-light: #FB923C;       /* 밝은 변형 */
+    --color-primary-dark: #EA580C;        /* 어두운 변형 */
+    --color-primary-rgb: 249, 115, 22;
+    
+    /* Secondary Colors */
+    --color-secondary: #FBBF24;           /* 밝은 옐로우 */
+    --color-secondary-light: #FCD34D;
+    --color-secondary-dark: #F59E0B;
+    --color-secondary-rgb: 251, 191, 36;
+    
+    /* Accent Colors */
+    --color-accent: #10B981;              /* 밝은 그린 */
+    --color-accent-light: #34D399;
+    --color-accent-dark: #059669;
+    --color-accent-rgb: 16, 185, 129;
+    
+    /* Semantic Colors - 다크 모드 전용 */
+    --color-success: #10B981;
+    --color-warning: #F59E0B;
+    --color-error: #EF4444;
+    --color-info: #3B82F6;
+    
+    /* Shadow Adjustments - 다크 모드에서 더 부드러운 그림자 */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    
+    /* Colored Shadows - 다크 모드 전용 */
+    --shadow-primary: 0 10px 25px -5px rgba(var(--color-primary-rgb), 0.4);
+    --shadow-secondary: 0 10px 25px -5px rgba(var(--color-secondary-rgb), 0.4);
+    --shadow-accent: 0 10px 25px -5px rgba(var(--color-accent-rgb), 0.4);
   }
 }
 
