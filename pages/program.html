@@ -98,6 +98,26 @@
             font-size: 48px;
             margin-bottom: 15px;
             animation: bounce 2s ease-in-out infinite;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* SVG Icon Enhancement */
+        .game-card__icon svg {
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+        
+        .game-card:hover .game-card__icon svg {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 8px rgba(249, 115, 22, 0.3));
+        }
+        
+        .game-card:hover .game-card__icon svg [fill="#F97316"] {
+            fill: #EA580C;
+        }
+        
+        .game-card:hover .game-card__icon svg [stroke="#F97316"] {
+            stroke: #EA580C;
         }
         
         .game-card__image {
@@ -106,6 +126,13 @@
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 15px;
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+        }
+        
+        .game-card:hover .game-card__image {
+            transform: scale(1.02);
+            filter: drop-shadow(0 4px 15px rgba(249, 115, 22, 0.25));
         }
         
         @keyframes bounce {
@@ -186,6 +213,26 @@
         .special-program__icon {
             font-size: 40px;
             flex-shrink: 0;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Special Program SVG Enhancement */
+        .special-program__icon svg {
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+        }
+        
+        .special-program__item:hover .special-program__icon svg {
+            transform: scale(1.08);
+            filter: drop-shadow(0 4px 12px rgba(249, 115, 22, 0.25));
+        }
+        
+        .special-program__item:hover .special-program__icon svg [fill="#F97316"] {
+            fill: #EA580C;
+        }
+        
+        .special-program__item:hover .special-program__icon svg [stroke="#F97316"] {
+            stroke: #EA580C;
         }
         
         .special-program__image {
@@ -194,6 +241,13 @@
             object-fit: cover;
             border-radius: 10px;
             flex-shrink: 0;
+            transition: all 0.3s ease-in-out;
+            filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
+        }
+        
+        .special-program__item:hover .special-program__image {
+            transform: scale(1.05);
+            filter: drop-shadow(0 4px 12px rgba(249, 115, 22, 0.25));
         }
         
         .special-program__content h3 {
@@ -304,9 +358,9 @@
                 <nav class="nav">
                     <a href="../index.html" class="nav__link">홈</a>
                     <a href="./about.html" class="nav__link">소개</a>
+                    <a href="./history.html" class="nav__link">25년 역사</a>
                     <a href="./event.html" class="nav__link">행사 안내</a>
                     <a href="./program.html" class="nav__link active">프로그램</a>
-                    <a href="./history.html" class="nav__link">연혁</a>
                     <a href="./register.html" class="nav__link">참가 신청</a>
                 </nav>
             </div>
@@ -383,7 +437,7 @@
                 
                 <div class="game-grid">
                     <div class="game-card">
-                        <div class="game-card__icon">🏠</div>
+                        <img src="../event_images/game_new_member_welcome.png" alt="신입회원 환영 게임" class="game-card__image">
                         <h3 class="game-card__title">우리집에 왜 왔니?</h3>
                         <div class="game-card__theme">신입환영</div>
                         <p class="game-card__description">
@@ -393,7 +447,7 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-card__icon">⭕</div>
+                        <img src="../event_images/game_group_forming.png" alt="그룹 형성 게임" class="game-card__image">
                         <h3 class="game-card__title">둥글게 둥글게</h3>
                         <div class="game-card__theme">공동체 감각</div>
                         <p class="game-card__description">
@@ -433,7 +487,7 @@
                     </div>
                     
                     <div class="game-card">
-                        <div class="game-card__icon">🎭</div>
+                        <img src="../event_images/game_charades.png" alt="몸짓 게임" class="game-card__image">
                         <h3 class="game-card__title">동상이몽</h3>
                         <div class="game-card__theme">창의 표현</div>
                         <p class="game-card__description">
@@ -496,7 +550,7 @@
                     </div>
                     
                     <div class="special-program__item">
-                        <div class="special-program__icon">📸</div>
+                        <img src="../event_images/program_photo_exhibition.png" alt="활동사진 전시" class="special-program__image">
                         <div class="special-program__content">
                             <h3>활동사진 전시</h3>
                             <p>지회 25년의 역사를 사진으로 만나보세요. 추억이 가득한 순간들을 함께 나눕니다.</p>
@@ -504,7 +558,7 @@
                     </div>
                     
                     <div class="special-program__item">
-                        <div class="special-program__icon">🎨</div>
+                        <img src="../event_images/program_banner_painting.png" alt="걸개그림 만들기" class="special-program__image">
                         <div class="special-program__content">
                             <h3>걸개그림 만들기</h3>
                             <p>우천 시 대체 프로그램입니다. 모두가 함께 만드는 대형 그림!</p>
@@ -512,7 +566,7 @@
                     </div>
                     
                     <div class="special-program__item">
-                        <div class="special-program__icon">🎁</div>
+                        <img src="../event_images/program_towel_gift.png" alt="기념 수건 증정" class="special-program__image">
                         <div class="special-program__content">
                             <h3>기념 수건 증정</h3>
                             <p>25주년 기념 자수가 새겨진 특별한 수건을 답례품으로 준비했습니다.</p>
