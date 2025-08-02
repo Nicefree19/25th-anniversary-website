@@ -102,7 +102,6 @@ npm run deploy
 
 ## 📞 문의
 
-- 이메일: contact@eunpyeong25.com
 - 카페: [https://cafe.daum.net/childbook3](https://cafe.daum.net/childbook3)
 - 인스타그램: [@child.book_](https://www.instagram.com/child.book_/)
 

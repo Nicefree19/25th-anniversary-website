@@ -68,22 +68,49 @@
         <section class="section">
             <div class="container">
                 <div class="intro-content" data-aos="fade-up">
-                    <div class="intro-content__text">
-                        <h2 class="section__title">어린이도서연구회 은평지회란?</h2>
-                        <p class="lead">
-                            어린이도서연구회 은평지회는 1999년에 설립되어 25년간 은평구 지역에서 
-                            아이들과 책을 사랑하는 부모님들이 모여 활동하는 독서 공동체입니다.
-                        </p>
-                        <p>
-                            우리는 좋은 어린이책을 찾아 읽고, 함께 공부하며, 아이들에게 
-                            책 읽는 즐거움을 전하기 위해 활동하고 있습니다. 
-                            매주 정기 모임을 통해 신간 도서를 검토하고, 독서교육 방법을 연구하며, 
-                            지역 도서관과 학교에서 책 읽어주기 봉사활동을 진행하고 있습니다.
-                        </p>
-                        <p>
-                            현재 정회원 52명, 후원회원 31명이 함께하고 있으며, 
-                            가족들과 함께 독서 문화를 확산하기 위해 노력하고 있습니다.
-                        </p>
+                    <div class="intro-content__grid">
+                        <div class="intro-content__text">
+                            <h2 class="section__title">어린이도서연구회 은평지회란?</h2>
+                            <p class="lead">
+                                어린이도서연구회 은평지회는 1999년에 설립되어 25년간 은평구 지역에서 
+                                아이들과 책을 사랑하는 부모님들이 모여 활동하는 독서 공동체입니다.
+                            </p>
+                            <p>
+                                우리는 좋은 어린이책을 찾아 읽고, 함께 공부하며, 아이들에게 
+                                책 읽는 즐거움을 전하기 위해 활동하고 있습니다. 
+                                정기 모임을 진행하며 어린이도서연구회 활동과 독서 교육에 관한 다양한 주제로 함께 공부하고 토론하며, 
+                                지역 도서관과 학교에서 책 읽어주기 봉사활동을 진행하고 있습니다.
+                            </p>
+                        </div>
+                        <div class="intro-content__image" data-aos="fade-left" data-aos-delay="200">
+                            <img src="../assets/images/event-images/footer_logo_tree_book.png" alt="어린이도서연구회 로고" class="intro-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Statistics Section -->
+                <div class="stats-section" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">25</div>
+                            <div class="stat-label">설립연수</div>
+                            <div class="stat-description">1999년부터</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">52</div>
+                            <div class="stat-label">정회원</div>
+                            <div class="stat-description">적극 참여</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">31</div>
+                            <div class="stat-label">후원회원</div>
+                            <div class="stat-description">함께 지원</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">83</div>
+                            <div class="stat-label">전체 가족</div>
+                            <div class="stat-description">공동체</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -378,10 +405,73 @@
         }
         
         .intro-content {
+            margin-bottom: var(--space-12);
+        }
+        
+        .intro-content__grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: var(--space-8);
             align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .intro-content__grid {
+                grid-template-columns: 2fr 1fr;
+                gap: var(--space-12);
+            }
+        }
+        
+        .intro-content__image {
+            text-align: center;
+        }
+        
+        .intro-image {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .stats-section {
+            padding: var(--space-12) 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 107, 0.05) 0%, 
+                rgba(255, 217, 61, 0.05) 100%);
+            border-radius: var(--radius-2xl);
+            margin-top: var(--space-8);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: var(--space-6);
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: var(--space-4);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: var(--font-bold);
+            color: var(--color-primary);
+            line-height: 1;
+            margin-bottom: var(--space-2);
+        }
+        
+        .stat-label {
+            font-size: var(--text-lg);
+            font-weight: var(--font-semibold);
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-1);
+        }
+        
+        .stat-description {
+            font-size: var(--text-sm);
+            color: var(--color-text-secondary);
         }
         
         .intro-content__text .lead {
