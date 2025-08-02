@@ -303,15 +303,11 @@ function initializeFormHandling() {
 function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification notification--${type}`;
-    
-    const content = document.createElement('div');
-    content.className = 'notification__content';
-    
-    const paragraph = document.createElement('p');
-    paragraph.textContent = message;
-    
-    content.appendChild(paragraph);
-    notification.appendChild(content);
+    notification.innerHTML = `
+        <div class="notification__content">
+            <p>${message}</p>
+        </div>
+    `;
     
     document.body.appendChild(notification);
     

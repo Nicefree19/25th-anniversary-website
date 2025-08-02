@@ -7,225 +7,548 @@
     
     <!-- SEO Meta Tags -->
     <title>소개 - 어린이도서연구회 은평지회</title>
-    <meta name="description" content="어린이도서연구회 은평지회는 1999년부터 함께해온 독서 공동체입니다.">
+    <meta name="description" content="어린이도서연구회 은평지회는 1999년부터 아이들과 책을 사랑하는 마음으로 함께해온 공동체입니다.">
+    <meta name="keywords" content="어린이도서연구회, 은평지회, 독서교육, 어린이책, 공동체">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/autumn-sports.css">
     
-    <style>
-        /* 페이지별 스타일 */
-        .page-header {
-            background: linear-gradient(135deg, #fff5f5 0%, #fffef5 100%);
-            padding: 100px 0 60px;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out;
-        }
-        
-        .page-header__title {
-            font-size: 42px;
-            font-weight: 900;
-            color: #333;
-            margin: 0 0 10px;
-            animation: fadeInDown 1s ease-out;
-        }
-        
-        .page-header__subtitle {
-            font-size: 20px;
-            color: #666;
-            animation: fadeInDown 1s ease-out 0.2s both;
-        }
-        
-        .content-section {
-            padding: 60px 0;
-        }
-        
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .about-content h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        
-        .about-content p {
-            font-size: 18px;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        
-        .info-box {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
-            animation: fadeIn 1s ease-out 0.5s both;
-        }
-        
-        .info-box h3 {
-            font-size: 22px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 20px;
-        }
-        
-        .info-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .info-list li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        .info-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #FF6B6B;
-            font-weight: bold;
-        }
-        
-        /* 애니메이션 정의 */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
-    <!-- 가을 낙엽 효과 -->
-    <div class="autumn-leaves">
-        <span class="leaf">🍂</span>
-        <span class="leaf">🍁</span>
-        <span class="leaf">🍂</span>
-        <span class="leaf">🍁</span>
-        <span class="leaf">🍂</span>
-    </div>
+    <!-- Skip to Main Content -->
+    <a href="#main" class="skip-link">본문으로 바로가기</a>
+    
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
                 <a href="../index.html" class="header__logo">
-                    <span>어린이도서연구회 은평지회</span>
+                    <img src="../assets/images/logo.png" alt="어린이도서연구회 로고" class="header__logo-image">
+                    <span>은평지회</span>
                 </a>
                 
-                <nav class="nav">
+                <nav class="nav" id="mainNav">
                     <a href="../index.html" class="nav__link">홈</a>
                     <a href="./about.html" class="nav__link active">소개</a>
+                    <a href="./history.html" class="nav__link">25년 역사</a>
                     <a href="./event.html" class="nav__link">행사 안내</a>
                     <a href="./program.html" class="nav__link">프로그램</a>
+                    <a href="./gallery.html" class="nav__link">갤러리</a>
                     <a href="./register.html" class="nav__link">참가 신청</a>
                 </nav>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </header>
     
-    <!-- Page Header -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-header__title">어린이도서연구회 은평지회</h1>
-            <p class="page-header__subtitle">
-                함께 읽고, 함께 자라는 25년의 여정
-            </p>
-        </div>
-    </section>
-    
-    <!-- Content Section -->
-    <section class="content-section">
-        <div class="container">
-            <div class="about-content">
-                <h2>우리는 이런 모임입니다</h2>
-                
-                <p>
-                    어린이도서연구회 은평지회는 1999년에 시작되어 25년간 은평구 지역에서 
-                    활동해온 독서 공동체입니다. 아이들과 책을 사랑하는 부모님들이 모여 
-                    좋은 어린이책을 함께 읽고 나누며 성장하고 있습니다.
-                </p>
-                
-                <p>
-                    매주 정기 모임을 통해 신간 도서를 검토하고, 독서 교육 방법을 연구하며, 
-                    지역사회에 책 읽는 문화를 전파하기 위해 노력하고 있습니다.
-                </p>
-                
-                <div class="info-box">
-                    <h3>주요 활동</h3>
-                    <ul class="info-list">
-                        <li>매주 화요일 오전 정기 모임</li>
-                        <li>신간 어린이책 읽기 및 토론</li>
-                        <li>도서관 책읽어주기 봉사활동</li>
-                        <li>지역 내 어린이책 보내기 사업</li>
-                        <li>연 2회 책잔치 및 특별 행사</li>
-                    </ul>
-                </div>
-                
-                <p>
-                    25년이라는 시간 동안 많은 회원들과 그 자녀들이 함께 성장했습니다. 
-                    이제는 '부록이'라 불리는 2세대 회원들도 함께하며 더욱 풍성한 공동체가 되었습니다.
-                </p>
-                
-                <p style="text-align: center; margin-top: 40px; font-style: italic; color: #666;">
-                    "책과 함께하는 즐거움을 나누고 싶은 모든 분들을 환영합니다."
+    <!-- Main Content -->
+    <main id="main">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header__title" data-aos="fade-up">우리를 소개합니다</h1>
+                <p class="page-header__subtitle" data-aos="fade-up" data-aos-delay="100">
+                    함께 읽고, 함께 자라는 어린이도서연구회 은평지회
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Introduction Section -->
+        <section class="section">
+            <div class="container">
+                <div class="intro-content" data-aos="fade-up">
+                    <div class="intro-content__text">
+                        <h2 class="section__title">어린이도서연구회 은평지회란?</h2>
+                        <p class="lead">
+                            어린이도서연구회 은평지회는 1999년에 설립되어 25년간 은평구 지역에서 
+                            아이들과 책을 사랑하는 부모님들이 모여 활동하는 독서 공동체입니다.
+                        </p>
+                        <p>
+                            우리는 좋은 어린이책을 찾아 읽고, 함께 공부하며, 아이들에게 
+                            책 읽는 즐거움을 전하기 위해 다양한 활동을 펼치고 있습니다. 
+                            매주 정기 모임을 통해 신간 도서를 검토하고, 독서 교육 방법을 연구하며, 
+                            지역 도서관과 학교에서 책 읽어주기 봉사활동을 진행하고 있습니다.
+                        </p>
+                        <p>
+                            25년이라는 시간 동안 수많은 회원들이 함께했고, 그들의 자녀들이 
+                            책과 함께 건강하게 성장하는 모습을 지켜봐 왔습니다. 이제는 
+                            2세대 회원들도 함께하며 더욱 풍성한 공동체로 발전하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="intro-content__image" data-aos="fade-left" data-aos-delay="200">
+                        <img src="../assets/images/about-main.jpg" alt="어린이도서연구회 은평지회 활동 모습" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Mission & Vision Section -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">우리의 미션과 비전</h2>
+                </div>
+                
+                <div class="mission-vision__grid">
+                    <div class="mission-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="mission-card__icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                <path d="M30 5l7.5 15.2L55 23l-12.5 12.2L45.5 53 30 44.8 14.5 53l3-17.8L5 23l17.5-2.8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="mission-card__title">미션</h3>
+                        <p class="mission-card__content">
+                            아이들에게 책 읽는 즐거움을 전하고, 
+                            책을 통해 세상을 바라보는 건강한 시각을 기르며, 
+                            함께 성장하는 독서 문화를 만들어갑니다.
+                        </p>
+                    </div>
+                    
+                    <div class="mission-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="mission-card__icon">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="currentColor">
+                                <path d="M30 10c-11.046 0-20 8.954-20 20s8.954 20 20 20 20-8.954 20-20-8.954-20-20-20zm0 36c-8.822 0-16-7.178-16-16s7.178-16 16-16 16 7.178 16 16-7.178 16-16 16z"/>
+                                <circle cx="30" cy="30" r="8"/>
+                            </svg>
+                        </div>
+                        <h3 class="mission-card__title">비전</h3>
+                        <p class="mission-card__content">
+                            모든 아이들이 책과 친구가 되는 세상, 
+                            부모와 아이가 함께 책으로 소통하는 가정, 
+                            지역사회가 함께 만드는 독서 문화를 꿈꿉니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Values Section -->
+        <section class="section">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">우리가 추구하는 가치</h2>
+                    <p class="section__subtitle">25년간 지켜온 소중한 가치들</p>
+                </div>
+                
+                <div class="values__grid">
+                    <div class="value-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="value-item__number">01</div>
+                        <h3 class="value-item__title">함께하는 즐거움</h3>
+                        <p class="value-item__description">
+                            혼자 읽는 것보다 함께 읽고 나누는 것이 더 큰 즐거움이라고 믿습니다.
+                        </p>
+                    </div>
+                    
+                    <div class="value-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="value-item__number">02</div>
+                        <h3 class="value-item__title">지속적인 성장</h3>
+                        <p class="value-item__description">
+                            끊임없이 배우고 연구하며 더 나은 독서 교육을 위해 노력합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="value-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="value-item__number">03</div>
+                        <h3 class="value-item__title">나눔의 실천</h3>
+                        <p class="value-item__description">
+                            우리가 받은 것을 지역사회와 나누며 함께 성장합니다.
+                        </p>
+                    </div>
+                    
+                    <div class="value-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="value-item__number">04</div>
+                        <h3 class="value-item__title">다양성 존중</h3>
+                        <p class="value-item__description">
+                            각자의 개성과 다름을 인정하고 존중하는 열린 공동체를 지향합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Activities Section -->
+        <section class="section section--alt">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <h2 class="section__title">주요 활동</h2>
+                    <p class="section__subtitle">우리가 하는 일들</p>
+                </div>
+                
+                <div class="activities__tabs">
+                    <div class="tabs" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tabs__list" role="tablist">
+                            <button class="tabs__item tabs__item--active" role="tab" aria-selected="true" data-tab="regular">
+                                정기 모임
+                            </button>
+                            <button class="tabs__item" role="tab" aria-selected="false" data-tab="volunteer">
+                                봉사 활동
+                            </button>
+                            <button class="tabs__item" role="tab" aria-selected="false" data-tab="education">
+                                교육 프로그램
+                            </button>
+                            <button class="tabs__item" role="tab" aria-selected="false" data-tab="special">
+                                특별 행사
+                            </button>
+                        </div>
+                        
+                        <div class="tabs__content">
+                            <div class="tabs__panel tabs__panel--active" role="tabpanel" data-panel="regular">
+                                <h3>정기 모임</h3>
+                                <p>
+                                    매주 화요일 오전 10시, 회원들이 모여 신간 도서를 함께 읽고 토론합니다. 
+                                    좋은 책을 선별하는 안목을 기르고, 아이들에게 적합한 책을 추천하는 
+                                    기준을 만들어갑니다.
+                                </p>
+                                <ul class="activity-list">
+                                    <li>신간 도서 리뷰 및 토론</li>
+                                    <li>독서 교육 방법 연구</li>
+                                    <li>회원 간 육아 경험 공유</li>
+                                    <li>전문가 초청 특강</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tabs__panel" role="tabpanel" data-panel="volunteer">
+                                <h3>봉사 활동</h3>
+                                <p>
+                                    지역 도서관과 학교, 복지 시설에서 정기적으로 책읽어주기 봉사를 합니다. 
+                                    아이들과 직접 만나 책의 즐거움을 나누고, 독서 문화 확산에 기여합니다.
+                                </p>
+                                <ul class="activity-list">
+                                    <li>도서관 책읽어주기 (매주)</li>
+                                    <li>초등학교 아침 독서 시간 운영</li>
+                                    <li>복지관 독서 프로그램 진행</li>
+                                    <li>책보내기 사업 - 은평지역 내 어린이책이 필요한 곳으로 매해 책보내기와 책읽어주기 활동 연계</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tabs__panel" role="tabpanel" data-panel="education">
+                                <h3>교육 프로그램</h3>
+                                <p>
+                                    회원들의 역량 강화를 위한 다양한 교육 프로그램을 운영합니다. 
+                                    전문가 초청 강연, 워크숍, 스터디 그룹 등을 통해 지속적으로 성장합니다.
+                                </p>
+                                <ul class="activity-list">
+                                    <li>독서 지도사 양성 과정</li>
+                                    <li>그림책 읽어주기 기법 워크숍</li>
+                                    <li>아동 문학 이해 강좌</li>
+                                    <li>부모 독서 교육 세미나</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tabs__panel" role="tabpanel" data-panel="special">
+                                <h3>특별 행사</h3>
+                                <p>
+                                    일 년에 여러 차례 특별한 행사를 개최하여 회원들과 지역 주민들이 
+                                    함께 즐길 수 있는 독서 문화 축제를 만들어갑니다.
+                                </p>
+                                <ul class="activity-list">
+                                    <li>봄/가을 책 잔치</li>
+                                    <li>작가와의 만남</li>
+                                    <li>어린이 독서 골든벨</li>
+                                    <li>가족 독서 캠프</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Join Section -->
+        <section class="section">
+            <div class="container">
+                <div class="join-cta" data-aos="zoom-in">
+                    <h2 class="join-cta__title">함께하고 싶으신가요?</h2>
+                    <p class="join-cta__description">
+                        어린이도서연구회 은평지회는 책을 사랑하는 모든 분들에게 열려 있습니다.<br>
+                        함께 읽고, 함께 성장하는 기쁨을 나누어요.
+                    </p>
+                    <div class="join-cta__actions">
+                        <a href="./register.html" class="btn btn--primary btn--lg">
+                            가입 문의하기
+                        </a>
+                        <a href="./event.html" class="btn btn--outline btn--lg">
+                            행사 참여하기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__content" style="text-align: center; padding: 40px 0; color: #666;">
-                <p style="margin-bottom: 20px;">
-                    <strong>정기모임 장소</strong><br>
-                    서울 은평구 진흥로 133 B동 B1층<br>
-                    매주 화요일 오전 10시
-                </p>
-                <p style="font-size: 14px; opacity: 0.8;">
-                    &copy; 2024 어린이도서연구회 은평지회. All rights reserved.
-                </p>
+            <div class="footer__grid">
+                <div class="footer__section">
+                    <h3>어린이도서연구회 은평지회</h3>
+                    <p>
+                        1999년부터 시작된 우리의 이야기<br>
+                        함께 읽고, 함께 자라는 공동체
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>행사 정보</h3>
+                    <p>
+                        <strong>일시:</strong> 2025년 9월 20일 (토)<br>
+                        <strong>장소:</strong> 팀수양관<br>
+                        <strong>주소:</strong> 서울 은평구 불광로18길 23
+                    </p>
+                </div>
+                
+                <div class="footer__section">
+                    <h3>문의하기</h3>
+                    <p>
+                        <strong>Instagram:</strong> @ep_childrensbook<br>
+                        <strong>Daum Cafe:</strong> cafe.daum.net/childbook63<br>
+                        <strong>정기모임 장소:</strong><br>
+                        서울 은평구 진흥로 133 B동 B1층<br>
+                        <a href="https://naver.me/xBsBswcP" target="_blank" style="color: rgba(255, 255, 255, 0.8); text-decoration: underline;">네이버 지도 보기</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 어린이도서연구회 은평지회. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    
+    <!-- JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/navigation.js" defer></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('[role="tab"]');
+            const panels = document.querySelectorAll('[role="tabpanel"]');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active states
+                    tabs.forEach(t => {
+                        t.classList.remove('tabs__item--active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    panels.forEach(p => {
+                        p.classList.remove('tabs__panel--active');
+                    });
+                    
+                    // Add active states
+                    tab.classList.add('tabs__item--active');
+                    tab.setAttribute('aria-selected', 'true');
+                    
+                    const targetPanel = document.querySelector(`[data-panel="${tab.dataset.tab}"]`);
+                    targetPanel.classList.add('tabs__panel--active');
+                });
+            });
+        });
+    </script>
+    
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 107, 0.1) 0%, 
+                rgba(255, 217, 61, 0.1) 100%);
+            padding: var(--space-20) 0 var(--space-16);
+            margin-top: 80px;
+        }
+        
+        .page-header__title {
+            font-size: var(--text-4xl);
+            text-align: center;
+            margin-bottom: var(--space-4);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header__subtitle {
+            font-size: var(--text-xl);
+            text-align: center;
+            color: var(--color-text-secondary);
+        }
+        
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .intro-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .intro-content__text .lead {
+            font-size: var(--text-xl);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .intro-content__text p {
+            margin-bottom: var(--space-4);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .intro-content__image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .mission-vision__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-8);
+            margin-top: var(--space-8);
+        }
+        
+        .mission-card {
+            text-align: center;
+            padding: var(--space-8);
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-all);
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .mission-card__icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto var(--space-6);
+            padding: var(--space-5);
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .mission-card__title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-4);
+        }
+        
+        .mission-card__content {
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .values__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+        
+        .value-item {
+            position: relative;
+            padding: var(--space-6);
+            background: white;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition-all);
+        }
+        
+        .value-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        
+        .value-item__number {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            font-size: var(--text-4xl);
+            font-weight: var(--font-black);
+            color: rgba(var(--color-primary-rgb), 0.1);
+        }
+        
+        .value-item__title {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-3);
+        }
+        
+        .value-item__description {
+            color: var(--color-text-secondary);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .activity-list {
+            list-style: none;
+            margin-top: var(--space-4);
+        }
+        
+        .activity-list li {
+            position: relative;
+            padding-left: var(--space-6);
+            margin-bottom: var(--space-2);
+            color: var(--color-text-secondary);
+        }
+        
+        .activity-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: var(--font-bold);
+        }
+        
+        .join-cta {
+            text-align: center;
+            padding: var(--space-16) var(--space-8);
+            background: linear-gradient(135deg, 
+                rgba(255, 107, 107, 0.05) 0%, 
+                rgba(255, 217, 61, 0.05) 100%);
+            border-radius: var(--radius-2xl);
+            border: 2px solid var(--color-border);
+        }
+        
+        .join-cta__title {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-4);
+        }
+        
+        .join-cta__description {
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-8);
+            line-height: var(--leading-relaxed);
+        }
+        
+        .join-cta__actions {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    </style>
 </body>
 </html>
