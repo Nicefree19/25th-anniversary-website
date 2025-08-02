@@ -44,10 +44,6 @@ function initializeNonCritical() {
         initializeAOS();
     });
     
-    // Initialize Swiper
-    requestIdleCallback(() => {
-        initializeSwiper();
-    });
     
     // Initialize countdown if not already initialized
     const countdown = document.getElementById('countdown');
@@ -97,66 +93,6 @@ function initializeAOS() {
     }
 }
 
-/**
- * Initialize Swiper Slider
- */
-function initializeSwiper() {
-    // Program Slider
-    const programSlider = document.getElementById('programSlider');
-    if (programSlider && typeof Swiper !== 'undefined') {
-        new Swiper('#programSlider', {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            loop: true,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-                1024: {
-                    slidesPerView: 3,
-                },
-            },
-        });
-    }
-    
-    // Gallery Slider (for gallery page)
-    const gallerySlider = document.getElementById('gallerySlider');
-    if (gallerySlider && typeof Swiper !== 'undefined') {
-        new Swiper('#gallerySlider', {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            thumbs: {
-                swiper: {
-                    el: '#galleryThumbs',
-                    slidesPerView: 5,
-                    spaceBetween: 10,
-                    watchSlidesProgress: true,
-                },
-            },
-        });
-    }
-}
 
 /**
  * Initialize Countdown Timer

@@ -9,7 +9,6 @@
 
 - 📱 반응형 디자인으로 모든 기기에서 완벽한 사용 경험
 - 🎨 고급스러운 테마와 애니메이션 효과
-- 📸 150장의 추억이 담긴 갤러리 (카테고리별 필터링)
 - 📅 25년 역사 타임라인
 - 📝 온라인 행사 참가 신청
 - ♿ 웹 접근성 준수
@@ -17,7 +16,6 @@
 ## 🛠️ 기술 스택
 
 - HTML5, CSS3, JavaScript (Vanilla)
-- Swiper.js - 슬라이드 기능
 - AOS (Animate On Scroll) - 스크롤 애니메이션
 - 웹 폰트: Noto Sans KR, Jua
 
@@ -31,7 +29,6 @@
 │   ├── history.html       # 25년 역사
 │   ├── event.html         # 행사 안내
 │   ├── program.html       # 프로그램
-│   ├── gallery.html       # 갤러리
 │   └── register.html      # 참가 신청
 ├── css/                    # 스타일시트
 │   ├── main.css          # 메인 스타일
@@ -40,8 +37,7 @@
 │   └── animations.css    # 애니메이션
 ├── js/                     # JavaScript
 │   ├── main.js           # 메인 스크립트
-│   ├── navigation.js     # 네비게이션
-│   └── gallery.js        # 갤러리 기능
+│   └── navigation.js     # 네비게이션
 └── assets/                # 정적 자원
     ├── images/           # 이미지
     ├── icons/           # 아이콘

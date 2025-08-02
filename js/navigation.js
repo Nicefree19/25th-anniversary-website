@@ -187,7 +187,6 @@ const Navigation = (function() {
                         <a href="/pages/history.html" class="mobile-nav__link">25년 역사</a>
                         <a href="/pages/event.html" class="mobile-nav__link">행사 안내</a>
                         <a href="/pages/program.html" class="mobile-nav__link">프로그램</a>
-                        <a href="/pages/gallery.html" class="mobile-nav__link">갤러리</a>
                         <a href="/pages/register.html" class="mobile-nav__link">참가 신청</a>
                     </div>
                 </div>
