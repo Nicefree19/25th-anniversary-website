@@ -6,916 +6,438 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- SEO Meta Tags -->
-    <title>프로그램 - 어린이도서연구회 은평지회 25주년 기념 가을 운동회</title>
-    <meta name="description" content="25주년 기념 가을 운동회의 다채로운 프로그램 안내">
-    <meta name="keywords" content="어린이도서연구회, 은평지회, 25주년, 가을운동회, 프로그램">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+    <title>프로그램 - 은평이오(25)!</title>
+    <meta name="description" content="어린이도서연구회 은평지회 25주년 기념 가을 운동회 프로그램 안내">
     
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/autumn-sports-theme.css">
     
-    <!-- External Libraries -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <style>
+        /* 페이지별 스타일 */
+        .page-header {
+            background: linear-gradient(135deg, #fff5f5 0%, #fffef5 100%);
+            padding: 100px 0 60px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .page-header__title {
+            font-size: 42px;
+            font-weight: 900;
+            color: #333;
+            margin: 0 0 10px;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .page-header__subtitle {
+            font-size: 20px;
+            color: #666;
+        }
+        
+        .content-section {
+            padding: 60px 0;
+        }
+        
+        .program-section {
+            margin-bottom: 60px;
+        }
+        
+        .program-section__title {
+            font-size: 32px;
+            font-weight: 700;
+            color: #333;
+            text-align: center;
+            margin: 0 0 40px;
+            position: relative;
+            padding-bottom: 20px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .program-section__title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #FF6B6B;
+        }
+        
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .game-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 6px 30px rgba(0,0,0,0.12);
+        }
+        
+        /* 게임 카드 순차 애니메이션 */
+        .game-card {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .game-card:nth-child(1) { animation-delay: 0.1s; }
+        .game-card:nth-child(2) { animation-delay: 0.2s; }
+        .game-card:nth-child(3) { animation-delay: 0.3s; }
+        .game-card:nth-child(4) { animation-delay: 0.4s; }
+        .game-card:nth-child(5) { animation-delay: 0.5s; }
+        .game-card:nth-child(6) { animation-delay: 0.6s; }
+        .game-card:nth-child(7) { animation-delay: 0.7s; }
+        .game-card:nth-child(8) { animation-delay: 0.8s; }
+        
+        .game-card__icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .game-card__title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 10px;
+        }
+        
+        .game-card__team {
+            display: inline-block;
+            padding: 5px 15px;
+            background: #f8f9fa;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .game-card__description {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* 게임 카드 색상 변화 */
+        .game-card:nth-child(odd) {
+            background: linear-gradient(135deg, #FFF7ED 0%, #FFFFFF 100%);
+        }
+        
+        .game-card:nth-child(even) {
+            background: linear-gradient(135deg, #FFFFFF 0%, #FEF3C7 100%);
+        }
+        
+        /* 게임 난이도 표시 */
+        .game-difficulty {
+            display: inline-flex;
+            gap: 3px;
+            margin-top: 10px;
+        }
+        
+        .difficulty-star {
+            width: 16px;
+            height: 16px;
+            background: #F59E0B;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+        
+        .difficulty-star.empty {
+            background: #E5E7EB;
+        }
+        
+        .special-program {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 40px;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .special-program__item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .special-program__item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .special-program__icon {
+            font-size: 40px;
+            flex-shrink: 0;
+        }
+        
+        .special-program__content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin: 0 0 8px;
+        }
+        
+        .special-program__content p {
+            color: #666;
+            margin: 0;
+        }
+        
+        .special-program__item {
+            animation: slideInLeft 0.8s ease-out;
+            transition: all 0.3s ease;
+        }
+        
+        .special-program__item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+        
+        .special-program__item:nth-child(1) { animation-delay: 0.1s; }
+        .special-program__item:nth-child(2) { animation-delay: 0.2s; }
+        .special-program__item:nth-child(3) { animation-delay: 0.3s; }
+        
+        /* 애니메이션 정의 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Skip to Main Content -->
-    <a href="#main" class="skip-link">본문으로 바로가기</a>
-    
+    <!-- 가을 낙엽 효과 -->
+    <div class="autumn-leaves">
+        <span class="leaf">🍂</span>
+        <span class="leaf">🍁</span>
+        <span class="leaf">🍂</span>
+        <span class="leaf">🍁</span>
+        <span class="leaf">🍂</span>
+    </div>
     <!-- Header -->
-    <header class="header" id="header">
+    <header class="header">
         <div class="container">
             <div class="header__inner">
                 <a href="../index.html" class="header__logo">
-                    <img src="../assets/images/logo.png" alt="어린이도서연구회 로고" class="header__logo-image">
-                    <span>은평지회</span>
+                    <span>어린이도서연구회 은평지회</span>
                 </a>
                 
-                <nav class="nav" id="mainNav">
+                <nav class="nav">
                     <a href="../index.html" class="nav__link">홈</a>
                     <a href="./about.html" class="nav__link">소개</a>
-                    <a href="./history.html" class="nav__link">25년 역사</a>
                     <a href="./event.html" class="nav__link">행사 안내</a>
                     <a href="./program.html" class="nav__link active">프로그램</a>
-                    <a href="./gallery.html" class="nav__link">갤러리</a>
                     <a href="./register.html" class="nav__link">참가 신청</a>
                 </nav>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="메뉴 열기">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="3" y1="6" x2="21" y2="6"/>
-                        <line x1="3" y1="12" x2="21" y2="12"/>
-                        <line x1="3" y1="18" x2="21" y2="18"/>
-                    </svg>
-                </button>
             </div>
         </div>
     </header>
     
-    <!-- Mobile Navigation -->
-    <nav class="mobile-nav" id="mobileNav">
-        <div class="mobile-nav__header">
-            <span class="mobile-nav__title">메뉴</span>
-            <button class="mobile-nav__close" id="mobileNavClose" aria-label="메뉴 닫기">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"/>
-                    <line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-            </button>
+    <!-- Page Header -->
+    <section class="page-header autumn-sports-bg">
+        <div class="container">
+            <h1 class="page-header__title">프로그램 안내</h1>
+            <p class="page-header__subtitle">
+                은평이오(25)! 다채로운 프로그램을 소개합니다
+            </p>
         </div>
-        <div class="mobile-nav__body">
-            <a href="../index.html" class="mobile-nav__link">홈</a>
-            <a href="./about.html" class="mobile-nav__link">소개</a>
-            <a href="./history.html" class="mobile-nav__link">25년 역사</a>
-            <a href="./event.html" class="mobile-nav__link">행사 안내</a>
-            <a href="./program.html" class="mobile-nav__link active">프로그램</a>
-            <a href="./gallery.html" class="mobile-nav__link">갤러리</a>
-            <a href="./register.html" class="mobile-nav__link">참가 신청</a>
-        </div>
-    </nav>
+    </section>
     
-    <!-- Main Content -->
-    <main id="main">
-        <!-- Page Header -->
-        <section class="page-header">
-            <div class="container">
-                <h1 class="page-header__title" data-aos="fade-up">프로그램 안내</h1>
-                <p class="page-header__subtitle" data-aos="fade-up" data-aos-delay="100">
-                    온 가족이 함께 즐기는 다채로운 프로그램
-                </p>
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 게임 프로그램 -->
+            <div class="program-section">
+                <h2 class="program-section__title">
+                    🎯 게임 프로그램
+                </h2>
+                
+                <div class="game-grid">
+                    <div class="game-card">
+                        <div class="game-card__icon">🏠</div>
+                        <h3 class="game-card__title">우리집에 왜 왔니?</h3>
+                        <div class="game-card__team">신입분과</div>
+                        <p class="game-card__description">
+                            전통 놀이를 응용한 재미있는 게임으로 서로를 알아가는 시간
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">🐍</div>
+                        <h3 class="game-card__title">꼬리잡기</h3>
+                        <div class="game-card__team">일반/저학년분과</div>
+                        <p class="game-card__description">
+                            팀워크가 중요한 협동 게임으로 모두가 하나되는 시간
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">🪢</div>
+                        <h3 class="game-card__title">줄다리기</h3>
+                        <div class="game-card__team">전체</div>
+                        <p class="game-card__description">
+                            모두가 함께 참여하는 전통 운동회의 꽃
+                        </p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #eee;">
+                            <span style="font-size: 14px; color: #666;">👥 전체</span>
+                            <span style="font-size: 14px; color: #F59E0B;">⭐⭐⭐⭐⭐</span>
+                        </div>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">⚽</div>
+                        <h3 class="game-card__title">바운딩 볼 릴레이</h3>
+                        <div class="game-card__team">일반/중학년분과</div>
+                        <p class="game-card__description">
+                            공을 튕기며 달리는 릴레이 게임으로 재미와 운동을 동시에
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">🏃</div>
+                        <h3 class="game-card__title">2인 3각 경주</h3>
+                        <div class="game-card__team">고학년분과</div>
+                        <p class="game-card__description">
+                            둘이서 하나되어 달리는 협동심 기르기 게임
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">🎭</div>
+                        <h3 class="game-card__title">동상이몽</h3>
+                        <div class="game-card__team">일반, 고학년분과</div>
+                        <p class="game-card__description">
+                            몸짓으로 전달하는 제스처 게임으로 소통의 즐거움을 느껴보세요
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">📰</div>
+                        <h3 class="game-card__title">신문지 게임</h3>
+                        <div class="game-card__team">일반분과</div>
+                        <p class="game-card__description">
+                            신문지를 활용한 창의적인 게임으로 웃음이 가득한 시간
+                        </p>
+                    </div>
+                    
+                    <div class="game-card">
+                        <div class="game-card__icon">🏁</div>
+                        <h3 class="game-card__title">계주</h3>
+                        <div class="game-card__team">전체</div>
+                        <p class="game-card__description">
+                            운동회의 하이라이트! 모두가 함께 달리는 대미의 계주
+                        </p>
+                    </div>
+                </div>
             </div>
-        </section>
-        
-        <!-- Program Categories -->
-        <section class="section">
-            <div class="container">
-                <div class="program-categories" data-aos="fade-up">
-                    <button class="category-btn category-btn--active" data-category="all">
-                        <span class="category-btn__icon">🎯</span>
-                        <span class="category-btn__text">전체</span>
-                    </button>
-                    <button class="category-btn" data-category="sports">
-                        <span class="category-btn__icon">🏃</span>
-                        <span class="category-btn__text">운동회</span>
-                    </button>
-                    <button class="category-btn" data-category="culture">
-                        <span class="category-btn__icon">📚</span>
-                        <span class="category-btn__text">문화</span>
-                    </button>
-                    <button class="category-btn" data-category="special">
-                        <span class="category-btn__icon">⭐</span>
-                        <span class="category-btn__text">특별</span>
-                    </button>
-                    <button class="category-btn" data-category="traditional">
-                        <span class="category-btn__icon">🎎</span>
-                        <span class="category-btn__text">전통놀이</span>
-                    </button>
-                </div>
+            
+            <!-- 특별 프로그램 -->
+            <div class="program-section">
+                <h2 class="program-section__title">
+                    <span class="medal"></span>
+                    ✨ 특별 프로그램
+                    <span class="medal"></span>
+                </h2>
                 
-                <!-- Sports Programs -->
-                <div class="program-section" data-category="sports">
-                    <h2 class="program-section__title" data-aos="fade-up">
-                        <span class="icon">🏃</span> 운동회 프로그램
-                    </h2>
-                    
-                    <div class="program-grid">
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🏠</div>
-                                <h3 class="program-item__title">우리집에 왜 왔니?</h3>
-                                <span class="program-item__badge">신입분과</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    신입회원을 찾아 팀원으로 모집하는 게임입니다. 
-                                    먼저 5명의 신입회원을 모집한 팀이 승리합니다.
-                                    새로운 회원들과 친해지는 좋은 기회입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 신입분과
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 팀 대항전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 없음
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">⭕</div>
-                                <h3 class="program-item__title">둥글게 둥글게</h3>
-                                <span class="program-item__badge">토요분과</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    진행자가 부르는 수만큼 모여 손을 잡고 원을 만드는 게임입니다. 
-                                    정해진 인원수로 빨리 모이는 팀워크가 필요합니다.
-                                    모든 연령대가 함께 즐길 수 있는 흥겨운 게임입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 토요분과
-                                    </div>
-                                    <div class="detail">
-                                        <strong>참가 대상:</strong> 전 연령
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 없음
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">📚</div>
-                                <h3 class="program-item__title">이구동성</h3>
-                                <span class="program-item__badge">교육부</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    팀원들이 합심하여 책 제목을 맞추는 게임입니다. 
-                                    한 명씩 돌아가며 단어를 말하고, 모두 같은 책 제목을 외치면 성공!
-                                    독서 상식과 팀워크가 필요합니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 교육부
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 팀 대항전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 프린트물
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎯</div>
-                                <h3 class="program-item__title">판 뒤집기</h3>
-                                <span class="program-item__badge">도서관위원회</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    책 제목이 적힌 판을 뒤집어 많이 획듍하는 게임입니다. 
-                                    함정 카드가 숨겨져 있으니 주의하세요!
-                                    운과 전략이 필요한 흥미진진한 게임입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 도서관위원회
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 팀 대항전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 책 제목 판
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="500">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🏃‍♂️</div>
-                                <h3 class="program-item__title">2인 3각 경주</h3>
-                                <span class="program-item__badge">정책부</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    2인 3각으로 허들을 넘고, 풍선을 터트리고, 과자를 먹고 휘파람까지!
-                                    다양한 미션을 수행하며 골인 지점까지 달리는 흥미진진한 경주입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 정책부
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 릴레이 경주
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 끈, 허들, 과자, 풍선 등
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="600">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎭</div>
-                                <h3 class="program-item__title">동상이몽</h3>
-                                <span class="program-item__badge">편집부</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    제시어를 보고 팀원들이 같은 포즈를 취하는 게임입니다.
-                                    얼마나 잘 소통하고 있는지 확인해보세요!
-                                    웃음이 끊이지 않는 즐거운 시간이 될 것입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 편집부
-                                    </div>
-                                    <div class="detail">
-                                        <strong>참가 대상:</strong> 전 연령
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 제시어
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="700">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">📰</div>
-                                <h3 class="program-item__title">신문지 게임</h3>
-                                <span class="program-item__badge">보따리</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    신문지 위에서 오래 버티기! 점점 작아지는 신문지 위에서
-                                    팀원들과 함께 균형을 잡으며 버티는 게임입니다.
-                                    협동심과 순발력이 필요한 재미있는 게임입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>담당 부서:</strong> 보따리
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 팀 대항전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 신문지, 보자기
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="800">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🏃</div>
-                                <h3 class="program-item__title">계주</h3>
-                                <span class="program-item__badge">전체</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    운동회의 하이라이트! 청백팀 대항 계주 경기입니다.
-                                    각 팀의 대표 선수들이 바톤을 이어받아 달리는
-                                    박진감 넘치는 경기로 운동회를 마무리합니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>참가 대상:</strong> 팀별 대표 선수
-                                    </div>
-                                    <div class="detail">
-                                        <strong>게임 방식:</strong> 팀 대항전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 바톤, 결승선 테이프
-                                    </div>
-                                </div>
-                            </div>
+                <div class="special-program">
+                    <div class="special-program__item">
+                        <div class="special-program__icon">✍️</div>
+                        <div class="special-program__content">
+                            <h3>미니백일장</h3>
+                            <p>성인부와 아동부로 나누어 진행하는 동시 대회입니다. 제시어를 통해 창의적인 시를 써보세요!</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Culture Programs -->
-                <div class="program-section" data-category="culture">
-                    <h2 class="program-section__title" data-aos="fade-up">
-                        <span class="icon">📚</span> 문화 프로그램
-                    </h2>
                     
-                    <div class="program-grid">
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">📖</div>
-                                <h3 class="program-item__title">책 나눔 장터</h3>
-                                <span class="program-item__badge">교류의 장</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    집에서 읽고 난 책을 가져와 다른 책과 교환해보세요. 
-                                    좋은 책을 나누고 새로운 책을 만나는 시간입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>참가 방법:</strong> 책 1권 이상 지참
-                                    </div>
-                                    <div class="detail">
-                                        <strong>교환 비율:</strong> 1:1 교환
-                                    </div>
-                                    <div class="detail">
-                                        <strong>운영 시간:</strong> 14:30-15:30
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎭</div>
-                                <h3 class="program-item__title">책읽어주기 공연</h3>
-                                <span class="program-item__badge">특별 공연</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    전문 책읽어주기 활동가들이 준비한 특별한 공연입니다. 
-                                    그림책이 살아 움직이는 듯한 생생한 이야기를 들어보세요.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>공연 시간:</strong> 13:00-13:30
-                                    </div>
-                                    <div class="detail">
-                                        <strong>대상:</strong> 전 연령
-                                    </div>
-                                    <div class="detail">
-                                        <strong>장소:</strong> 야외 무대
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🧩</div>
-                                <h3 class="program-item__title">독서 골든벨</h3>
-                                <span class="program-item__badge">퀴즈 대회</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    어린이 고전부터 최신 베스트셀러까지! 
-                                    다양한 책에 대한 퀴즈를 풀며 독서왕을 가려봅니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>참가 대상:</strong> 초등학생
-                                    </div>
-                                    <div class="detail">
-                                        <strong>문제 수준:</strong> 학년별 구분
-                                    </div>
-                                    <div class="detail">
-                                        <strong>상품:</strong> 도서 세트
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="400">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">✍️</div>
-                                <h3 class="program-item__title">미니백일장</h3>
-                                <span class="program-item__badge">창작의 시간</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    제시어 3개를 활용한 동시 짓기 대회입니다.
-                                    성인부와 아동부로 나누어 진행되며, 
-                                    순간의 영감을 글로 표현하는 특별한 시간입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>시간:</strong> 13:30-14:00
-                                    </div>
-                                    <div class="detail">
-                                        <strong>참가 부문:</strong> 성인부 / 아동부
-                                    </div>
-                                    <div class="detail">
-                                        <strong>주제:</strong> 제시어 3개 활용
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="special-program__item">
+                        <div class="special-program__icon">🎬</div>
+                        <div class="special-program__content">
+                            <h3>25주년 기념식</h3>
+                            <p>회원들과 "부록이들"이 보내온 축하 영상 메시지를 함께 감상하는 감동의 시간</p>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Special Programs -->
-                <div class="program-section" data-category="special">
-                    <h2 class="program-section__title" data-aos="fade-up">
-                        <span class="icon">⭐</span> 특별 프로그램
-                    </h2>
                     
-                    <div class="program-grid">
-                        <div class="program-item program-item--special" data-aos="fade-up" data-aos-delay="100">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🏆</div>
-                                <h3 class="program-item__title">25주년 기념식</h3>
-                                <span class="program-item__badge badge--gold">하이라이트</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    25년의 역사를 돌아보고 함께한 분들께 감사를 전하는 시간입니다. 
-                                    회원들과 '부록이'들이 보내주신 축하 메시지 영상, 25년 연혁을 담은 
-                                    특별 영상이 상영됩니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>시간:</strong> 10:30-11:00
-                                    </div>
-                                    <div class="detail">
-                                        <strong>내용:</strong> 축사, 영상 상영, 감사패 전달
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item program-item--special" data-aos="fade-up" data-aos-delay="200">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">📸</div>
-                                <h3 class="program-item__title">25년 역사 전시</h3>
-                                <span class="program-item__badge badge--gold">추억의 공간</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    1999년부터 2024년까지의 활동 사진과 자료를 전시합니다. 
-                                    추억의 사진 속에서 자신을 찾아보는 재미도 쏠쏠합니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>관람 시간:</strong> 상시 운영
-                                    </div>
-                                    <div class="detail">
-                                        <strong>전시 내용:</strong> 사진, 활동 자료, 추억의 물건
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item program-item--special" data-aos="fade-up" data-aos-delay="300">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎪</div>
-                                <h3 class="program-item__title">깜짝 이벤트</h3>
-                                <span class="program-item__badge badge--gold">놀라운 선물</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    행사 곳곳에서 펼쳐지는 소소하고 즐거운 이벤트들! 
-                                    언제 어디서 나타날지 모르는 깜짝 선물과 미션을 통해 
-                                    특별한 추억을 만들어보세요.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>진행 방식:</strong> 불시에 진행되는 깜짝 이벤트
-                                    </div>
-                                    <div class="detail">
-                                        <strong>예시:</strong> 포토존 미션, 응원 구호, 즉석 퀴즈 등
-                                    </div>
-                                    <div class="detail">
-                                        <strong>선물:</strong> 귀여운 문구류와 간식 선물
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Traditional Games Programs -->
-                <div class="program-section" data-category="traditional">
-                    <h2 class="program-section__title" data-aos="fade-up">
-                        <span class="icon">🎎</span> 전통놀이 프로그램
-                    </h2>
-                    
-                    <div class="program-grid">
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="100">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🪢</div>
-                                <h3 class="program-item__title">고무줄놀이</h3>
-                                <span class="program-item__badge">추억의 놀이</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    어린 시절 추억의 고무줄놀이를 다시 즐겨보세요. 
-                                    5월 전체모임에서 큰 인기를 얻었던 프로그램입니다.
-                                    세대를 아우르는 즐거운 놀이 시간이 될 것입니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>참가 대상:</strong> 전 연령
-                                    </div>
-                                    <div class="detail">
-                                        <strong>소요 시간:</strong> 15분
-                                    </div>
-                                    <div class="detail">
-                                        <strong>난이도:</strong> 초급부터 고급까지
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="200">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎯</div>
-                                <h3 class="program-item__title">줄넘기 대회</h3>
-                                <span class="program-item__badge">전통 놀이</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    개인전과 단체전으로 나누어 진행되는 줄넘기 대회입니다. 
-                                    은평한옥마을에서 진행했던 전통놀이의 연장선으로,
-                                    온 가족이 함께 참여할 수 있습니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>경기 방식:</strong> 개인전, 단체전
-                                    </div>
-                                    <div class="detail">
-                                        <strong>준비물:</strong> 줄넘기 (현장 대여 가능)
-                                    </div>
-                                    <div class="detail">
-                                        <strong>상품:</strong> 우승자 상품 준비
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="program-item" data-aos="fade-up" data-aos-delay="300">
-                            <div class="program-item__header">
-                                <div class="program-item__icon">🎪</div>
-                                <h3 class="program-item__title">배리어프리 놀이</h3>
-                                <span class="program-item__badge">모두의 놀이</span>
-                            </div>
-                            <div class="program-item__content">
-                                <p class="program-item__description">
-                                    봄봄축제에서 경험한 배리어프리 정신을 이어가는 프로그램입니다. 
-                                    장애/비장애 구분 없이 모두가 함께 즐길 수 있는 
-                                    포용적인 전통놀이를 준비했습니다.
-                                </p>
-                                <div class="program-item__details">
-                                    <div class="detail">
-                                        <strong>특징:</strong> 누구나 참여 가능
-                                    </div>
-                                    <div class="detail">
-                                        <strong>협력 단체:</strong> 서대문지회 연합
-                                    </div>
-                                    <div class="detail">
-                                        <strong>목표:</strong> 모두가 함께하는 축제
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="special-program__item">
+                        <div class="special-program__icon">🎁</div>
+                        <div class="special-program__content">
+                            <h3>경품 추첨</h3>
+                            <p>참가자 전원을 대상으로 하는 푸짐한 경품 추첨! 행운의 주인공이 되어보세요</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Program Tips -->
-        <section class="section section--alt">
-            <div class="container">
-                <div class="tips-section" data-aos="fade-up">
-                    <h2 class="section__title text-center">프로그램 참여 TIP</h2>
-                    <div class="tips-grid">
-                        <div class="tip-card">
-                            <div class="tip-card__icon">💡</div>
-                            <h3 class="tip-card__title">미리 준비하세요</h3>
-                            <p>운동화와 편한 복장은 필수! 책 나눔 장터 참여를 원하신다면 교환할 책도 준비해 주세요.</p>
-                        </div>
-                        
-                        <div class="tip-card">
-                            <div class="tip-card__icon">👨‍👩‍👧‍👦</div>
-                            <h3 class="tip-card__title">가족과 함께</h3>
-                            <p>가족이 함께 참여할 수 있는 프로그램이 많습니다. 온 가족이 함께 추억을 만들어보세요.</p>
-                        </div>
-                        
-                        <div class="tip-card">
-                            <div class="tip-card__icon">🎯</div>
-                            <h3 class="tip-card__title">적극적으로 참여</h3>
-                            <p>망설이지 말고 적극적으로 참여해보세요. 25주년 기념행사는 모두가 주인공입니다!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
     
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer__grid">
-                <div class="footer__section">
-                    <h3>어린이도서연구회 은평지회</h3>
-                    <p>
-                        1999년부터 시작된 우리의 이야기<br>
-                        함께 읽고, 함께 자라는 공동체
-                    </p>
-                </div>
-                
-                <div class="footer__section">
-                    <h3>행사 정보</h3>
-                    <p>
-                        <strong>일시:</strong> 2025년 9월 20일 (토)<br>
-                        <strong>장소:</strong> 팀수양관<br>
-                        <strong>주소:</strong> 서울 은평구 불광로18길 23
-                    </p>
-                </div>
-                
-                <div class="footer__section">
-                    <h3>문의하기</h3>
-                    <p>
-                        <strong>이메일:</strong> contact@eunpyeong25.com<br>
-                        <strong>Instagram:</strong> @ep_childrensbook<br>
-                        <strong>Daum Cafe:</strong> cafe.daum.net/childbook63<br>
-                        <strong>정기모임 장소:</strong><br>
-                        서울 은평구 진흥로 133 B동 B1층<br>
-                        <a href="https://naver.me/xBsBswcP" target="_blank" style="color: rgba(255, 255, 255, 0.8); text-decoration: underline;">네이버 지도 보기</a>
-                    </p>
-                </div>
-            </div>
-            
-            <div class="footer__bottom">
-                <p>&copy; 2024 어린이도서연구회 은평지회. All rights reserved.</p>
+            <div class="footer__content" style="text-align: center; padding: 40px 0; color: #666;">
+                <p style="margin-bottom: 20px;">
+                    <strong>참가비 입금계좌</strong><br>
+                    국민은행 51420-1010-34797 (예금주: (사)어린이도서연구회 은평지회)<br>
+                    납부 마감: 2025년 8월 31일
+                </p>
+                <p style="font-size: 14px; opacity: 0.8;">
+                    &copy; 2024 어린이도서연구회 은평지회. All rights reserved.
+                </p>
             </div>
         </div>
     </footer>
-    
-    <!-- JavaScript -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="../js/main.js" defer></script>
-    <script src="../js/navigation.js" defer></script>
-    
-    <style>
-        /* Page-specific styles */
-        .page-header {
-            background: linear-gradient(135deg, 
-                rgba(255, 107, 107, 0.1) 0%, 
-                rgba(255, 217, 61, 0.1) 100%);
-            padding: var(--space-20) 0 var(--space-16);
-            margin-top: 80px;
-        }
-        
-        .program-categories {
-            display: flex;
-            gap: var(--space-4);
-            justify-content: center;
-            margin-bottom: var(--space-12);
-            flex-wrap: wrap;
-        }
-        
-        .category-btn {
-            display: flex;
-            align-items: center;
-            gap: var(--space-2);
-            padding: var(--space-3) var(--space-6);
-            background: white;
-            border: 2px solid var(--color-border);
-            border-radius: var(--radius-full);
-            font-size: var(--text-base);
-            font-weight: var(--font-semibold);
-            color: var(--color-text-secondary);
-            cursor: pointer;
-            transition: var(--transition-all);
-        }
-        
-        .category-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        .category-btn--active {
-            background: var(--color-primary);
-            color: white;
-            border-color: var(--color-primary);
-        }
-        
-        .category-btn__icon {
-            font-size: 20px;
-        }
-        
-        .program-section {
-            margin-bottom: var(--space-16);
-        }
-        
-        .program-section[data-category]:not([data-category="all"]) {
-            display: none;
-        }
-        
-        .program-section--active {
-            display: block;
-        }
-        
-        .program-section__title {
-            display: flex;
-            align-items: center;
-            gap: var(--space-3);
-            font-size: var(--text-2xl);
-            margin-bottom: var(--space-8);
-        }
-        
-        .program-section__title .icon {
-            font-size: 32px;
-        }
-        
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: var(--space-6);
-        }
-        
-        .program-item {
-            background: white;
-            border-radius: var(--radius-xl);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-all);
-        }
-        
-        .program-item:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .program-item--special {
-            background: linear-gradient(135deg, 
-                rgba(255, 107, 107, 0.05) 0%, 
-                rgba(255, 217, 61, 0.05) 100%);
-            border: 2px solid var(--color-primary);
-        }
-        
-        .program-item__header {
-            padding: var(--space-6);
-            border-bottom: 1px solid var(--color-border);
-            position: relative;
-        }
-        
-        .program-item__icon {
-            font-size: 48px;
-            margin-bottom: var(--space-3);
-        }
-        
-        .program-item__title {
-            font-size: var(--text-xl);
-            margin-bottom: var(--space-2);
-        }
-        
-        .program-item__badge {
-            position: absolute;
-            top: var(--space-4);
-            right: var(--space-4);
-            padding: var(--space-1) var(--space-3);
-            background: var(--color-background);
-            color: var(--color-text-secondary);
-            border-radius: var(--radius-full);
-            font-size: var(--text-sm);
-            font-weight: var(--font-medium);
-        }
-        
-        .badge--gold {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: white;
-        }
-        
-        .program-item__content {
-            padding: var(--space-6);
-        }
-        
-        .program-item__description {
-            color: var(--color-text-secondary);
-            line-height: var(--leading-relaxed);
-            margin-bottom: var(--space-4);
-        }
-        
-        .program-item__details {
-            display: flex;
-            flex-direction: column;
-            gap: var(--space-2);
-        }
-        
-        .detail {
-            display: flex;
-            gap: var(--space-2);
-            font-size: var(--text-sm);
-            color: var(--color-text-secondary);
-        }
-        
-        .detail strong {
-            color: var(--color-text);
-            flex-shrink: 0;
-        }
-        
-        .tips-section {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .tips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-6);
-            margin-top: var(--space-8);
-        }
-        
-        .tip-card {
-            text-align: center;
-            padding: var(--space-8);
-            background: white;
-            border-radius: var(--radius-xl);
-            box-shadow: var(--shadow-md);
-            transition: var(--transition-all);
-        }
-        
-        .tip-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .tip-card__icon {
-            font-size: 48px;
-            margin-bottom: var(--space-4);
-        }
-        
-        .tip-card__title {
-            font-size: var(--text-lg);
-            margin-bottom: var(--space-3);
-        }
-        
-        .tip-card p {
-            color: var(--color-text-secondary);
-            line-height: var(--leading-relaxed);
-        }
-    </style>
-    
-    <script>
-        // Category filter functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const categoryBtns = document.querySelectorAll('.category-btn');
-            const programSections = document.querySelectorAll('.program-section');
-            
-            categoryBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const category = btn.dataset.category;
-                    
-                    // Update active button
-                    categoryBtns.forEach(b => b.classList.remove('category-btn--active'));
-                    btn.classList.add('category-btn--active');
-                    
-                    // Show/hide sections
-                    programSections.forEach(section => {
-                        if (category === 'all' || section.dataset.category === category) {
-                            section.style.display = 'block';
-                            // Re-trigger AOS animation
-                            const aosElements = section.querySelectorAll('[data-aos]');
-                            aosElements.forEach(el => {
-                                el.classList.remove('aos-animate');
-                                setTimeout(() => {
-                                    el.classList.add('aos-animate');
-                                }, 100);
-                            });
-                        } else {
-                            section.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>

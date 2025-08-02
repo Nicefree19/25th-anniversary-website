@@ -259,14 +259,9 @@ const Animations = (function() {
         
         splitTextElements.forEach(el => {
             const text = el.textContent;
-            el.textContent = ''; // Clear the element
-            
-            text.split('').forEach((char, i) => {
-                const span = document.createElement('span');
-                span.textContent = char;
-                span.style.animationDelay = `${i * 0.05}s`;
-                el.appendChild(span);
-            });
+            el.innerHTML = text.split('').map((char, i) => 
+                `<span style="animation-delay: ${i * 0.05}s">${char}</span>`
+            ).join('');
         });
     }
     

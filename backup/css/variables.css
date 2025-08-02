@@ -8,39 +8,32 @@
      Color Palette
      ========================================================================== */
   
-  /* Primary Colors - 가을 운동회 테마 */
-  --color-primary: #F97316;        /* 가을 오렌지 - 운동회의 활기 */
-  --color-primary-light: #FB923C;
-  --color-primary-dark: #EA580C;
-  --color-primary-rgb: 249, 115, 22;
+  /* Primary Colors - 가을의 따뜻함 */
+  --color-primary: #D2691E;        /* 초콜릿 브라운 - 따뜻하고 고급스러운 */
+  --color-primary-light: #DEB887;
+  --color-primary-dark: #A0522D;
+  --color-primary-rgb: 210, 105, 30;
   
-  /* Secondary Colors - 청팀 색상 */
-  --color-secondary: #3B82F6;      /* 청팀 블루 */
-  --color-secondary-light: #60A5FA;
-  --color-secondary-dark: #2563EB;
-  --color-secondary-rgb: 59, 130, 246;
+  /* Secondary Colors - 가을의 풍요로움 */
+  --color-secondary: #F4A460;      /* 샌디 브라운 - 부드럽고 따뜻한 */
+  --color-secondary-light: #FFDAB9;
+  --color-secondary-dark: #CD853F;
+  --color-secondary-rgb: 244, 164, 96;
   
-  /* Accent Colors - 가을 골드 */
-  --color-accent: #F59E0B;         /* 가을 골드 - 메달과 승리 */
-  --color-accent-light: #FCD34D;
-  --color-accent-dark: #D97706;
-  --color-accent-rgb: 245, 158, 11;
+  /* Accent Colors - 생동감 */
+  --color-accent: #8FBC8F;         /* 다크 시 그린 - 자연스럽고 편안한 */
+  --color-accent-light: #98FB98;
+  --color-accent-dark: #556B2F;
+  --color-accent-rgb: 143, 188, 143;
   
-  /* 운동회 특별 색상 */
-  --color-track-red: #DC2626;
-  --color-grass-green: #16A34A;
-  --color-medal-gold: #F59E0B;
-  --color-medal-silver: #9CA3AF;
-  --color-medal-bronze: #D97706;
-  
-  /* Neutral Colors - 운동회장 분위기 */
-  --color-text-primary: #1F2937;
-  --color-text-secondary: #4B5563;
-  --color-text-light: #6B7280;
-  --color-background: #FFFBF7;      /* 운동장 햇살 배경 */
-  --color-background-alt: #FFF7ED;  /* 가을 하늘 배경 */
-  --color-background-dark: #FEF3C7; /* 황금빛 가을 */
-  --color-border: #FED7AA;
+  /* Neutral Colors - 더 따뜻하고 부드러운 톤 */
+  --color-text-primary: #3E2723;
+  --color-text-secondary: #5D4037;
+  --color-text-light: #795548;
+  --color-background: #FFF8F3;      /* 아주 연한 크림색 배경 */
+  --color-background-alt: #FFF5EE;  /* 시쉘 색상 */
+  --color-background-dark: #FAF0E6; /* 리넨 색상 */
+  --color-border: #E8DDD5;
   
   /* Semantic Colors */
   --color-success: #27AE60;
@@ -248,10 +241,8 @@
    Utility Classes for CSS Variables
    ========================================================================== */
 
-.theme-autumn-sports {
-  --color-primary: #F97316;
-  --color-secondary: #F59E0B;
-  --color-accent: #DC2626;
-  --color-track-red: #DC2626;
-  --color-grass-green: #16A34A;
+.theme-autumn {
+  --color-primary: #D2691E;
+  --color-secondary: #FF8C00;
+  --color-accent: #8B4513;
 }

@@ -117,57 +117,16 @@ const Navigation = (function() {
         if (!icon) return;
         
         if (isOpen) {
-            // Clear existing content
-            while (icon.firstChild) {
-                icon.removeChild(icon.firstChild);
-            }
-            // Create close icon lines
-            const line1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line1.setAttribute('x1', '18');
-            line1.setAttribute('y1', '6');
-            line1.setAttribute('x2', '6');
-            line1.setAttribute('y2', '18');
-            line1.classList.add('animate-fade-in');
-            
-            const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line2.setAttribute('x1', '6');
-            line2.setAttribute('y1', '6');
-            line2.setAttribute('x2', '18');
-            line2.setAttribute('y2', '18');
-            line2.classList.add('animate-fade-in');
-            
-            icon.appendChild(line1);
-            icon.appendChild(line2);
+            icon.innerHTML = `
+                <line x1="18" y1="6" x2="6" y2="18" class="animate-fade-in"/>
+                <line x1="6" y1="6" x2="18" y2="18" class="animate-fade-in"/>
+            `;
         } else {
-            // Clear existing content
-            while (icon.firstChild) {
-                icon.removeChild(icon.firstChild);
-            }
-            // Create hamburger icon lines
-            const line1 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line1.setAttribute('x1', '3');
-            line1.setAttribute('y1', '6');
-            line1.setAttribute('x2', '21');
-            line1.setAttribute('y2', '6');
-            line1.classList.add('animate-fade-in');
-            
-            const line2 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line2.setAttribute('x1', '3');
-            line2.setAttribute('y1', '12');
-            line2.setAttribute('x2', '21');
-            line2.setAttribute('y2', '12');
-            line2.classList.add('animate-fade-in');
-            
-            const line3 = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-            line3.setAttribute('x1', '3');
-            line3.setAttribute('y1', '18');
-            line3.setAttribute('x2', '21');
-            line3.setAttribute('y2', '18');
-            line3.classList.add('animate-fade-in');
-            
-            icon.appendChild(line1);
-            icon.appendChild(line2);
-            icon.appendChild(line3);
+            icon.innerHTML = `
+                <line x1="3" y1="6" x2="21" y2="6" class="animate-fade-in"/>
+                <line x1="3" y1="12" x2="21" y2="12" class="animate-fade-in"/>
+                <line x1="3" y1="18" x2="21" y2="18" class="animate-fade-in"/>
+            `;
         }
     }
     
@@ -228,6 +187,7 @@ const Navigation = (function() {
                         <a href="/pages/history.html" class="mobile-nav__link">25년 역사</a>
                         <a href="/pages/event.html" class="mobile-nav__link">행사 안내</a>
                         <a href="/pages/program.html" class="mobile-nav__link">프로그램</a>
+                        <a href="/pages/gallery.html" class="mobile-nav__link">갤러리</a>
                         <a href="/pages/register.html" class="mobile-nav__link">참가 신청</a>
                     </div>
                 </div>
