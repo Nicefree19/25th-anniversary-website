@@ -1,0 +1,468 @@
+/**
+ * Mobile Environment Optimization & Enhancement CSS
+ * 모바일 환경 완성도 및 퀄리티 최적화
+ */
+
+/* ==========================================================================
+   Enhanced Mobile Typography
+   ========================================================================== */
+
+/* 모바일에서 더 나은 가독성을 위한 타이포그래피 개선 */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* 16px 이상으로 확대 방지 */
+        line-height: 1.6;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    
+    /* 헤딩 크기 모바일 최적화 */
+    h1 {
+        font-size: clamp(1.75rem, 6vw, 2.5rem);
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+    
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+        line-height: 1.3;
+        margin-bottom: 0.875rem;
+    }
+    
+    h3 {
+        font-size: clamp(1.25rem, 4vw, 1.5rem);
+        line-height: 1.4;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* 본문 텍스트 최적화 */
+    p {
+        margin-bottom: 1rem;
+        line-height: 1.65;
+    }
+}
+
+/* ==========================================================================
+   Enhanced Touch Interactions
+   ========================================================================== */
+
+/* 터치 타겟 크기 최적화 (44px 이상) */
+@media (max-width: 768px) {
+    /* 모든 버튼 최소 크기 보장 */
+    button,
+    .btn,
+    [role="button"],
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 16px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* 링크 터치 영역 확장 */
+    a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* 네비게이션 링크 최적화 */
+    .nav__link,
+    .mobile-nav__link {
+        min-height: 48px;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* 폼 요소 터치 최적화 */
+    input,
+    textarea,
+    select {
+        min-height: 44px;
+        padding: 12px 16px;
+        font-size: 16px; /* 확대 방지 */
+        border-radius: 8px;
+        border: 2px solid var(--color-border);
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    
+    /* 체크박스, 라디오 버튼 크기 확대 */
+    input[type="checkbox"],
+    input[type="radio"] {
+        min-width: 20px;
+        min-height: 20px;
+        margin-right: 8px;
+    }
+}
+
+/* ==========================================================================
+   Mobile Navigation Enhancements
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 모바일 메뉴 버튼 개선 */
+    .mobile-menu-btn {
+        min-width: 48px;
+        min-height: 48px;
+        padding: 12px;
+        border-radius: 8px;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+    
+    .mobile-menu-btn:active {
+        transform: scale(0.95);
+        background: rgba(var(--color-primary-rgb), 0.1);
+    }
+    
+    /* 모바일 네비게이션 개선 */
+    .mobile-nav {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .mobile-nav__content {
+        width: min(85vw, 320px);
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+    }
+    
+    .mobile-nav__link {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* 터치 피드백 애니메이션 */
+    .mobile-nav__link::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(var(--color-primary-rgb), 0.1);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .mobile-nav__link:active::before {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/* ==========================================================================
+   Mobile Form Optimizations
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 폼 컨테이너 최적화 */
+    .form-container {
+        padding: 16px;
+        margin: 0 -16px;
+    }
+    
+    /* 입력 필드 그룹 간격 */
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: var(--color-text-primary);
+    }
+    
+    /* 긴 텍스트 입력을 위한 텍스트에어리어 최적화 */
+    textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+    
+    /* 제출 버튼 전체 너비 */
+    .form-submit {
+        width: 100%;
+        margin-top: 24px;
+        padding: 16px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+/* ==========================================================================
+   Mobile-Specific Animations & Micro-interactions
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 카드 호버 효과를 터치 효과로 변경 */
+    .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .card:active {
+        transform: scale(0.98);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    /* 버튼 터치 피드백 */
+    .btn {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .btn::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease, height 0.3s ease;
+        pointer-events: none;
+    }
+    
+    .btn:active::after {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* ==========================================================================
+   Mobile Performance Optimizations
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* GPU 가속 최적화 */
+    .mobile-optimized {
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    
+    /* 애니메이션 최적화 */
+    .smooth-animation {
+        will-change: transform, opacity;
+    }
+    
+    /* 스크롤 성능 최적화 */
+    .scroll-container {
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+    }
+    
+    /* 이미지 로딩 최적화 */
+    img {
+        max-width: 100%;
+        height: auto;
+        loading: lazy;
+    }
+}
+
+/* ==========================================================================
+   Accessibility Enhancements for Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 포커스 표시 개선 */
+    *:focus {
+        outline: 3px solid var(--color-primary);
+        outline-offset: 2px;
+    }
+    
+    /* 건너뛰기 링크 */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: var(--color-primary);
+        color: white;
+        padding: 8px;
+        text-decoration: none;
+        z-index: 100;
+        border-radius: 4px;
+    }
+    
+    .skip-link:focus {
+        top: 6px;
+    }
+    
+    /* 스크린 리더용 텍스트 */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+}
+
+/* ==========================================================================
+   Mobile-Specific Dark Mode Support
+   ========================================================================== */
+
+@media (max-width: 768px) and (prefers-color-scheme: dark) {
+    /* 다크 모드 모바일 최적화 */
+    body {
+        background: var(--color-background);
+        color: var(--color-text-primary);
+    }
+    
+    .mobile-nav__content {
+        background: var(--color-background-alt);
+        border-left: 1px solid var(--color-border);
+    }
+    
+    input,
+    textarea,
+    select {
+        background: var(--color-background-alt);
+        border-color: var(--color-border);
+        color: var(--color-text-primary);
+    }
+    
+    .btn {
+        background: var(--color-primary);
+        color: white;
+    }
+}
+
+/* ==========================================================================
+   Mobile Viewport Meta Tag Support
+   ========================================================================== */
+
+/* iOS Safari 주소창 숨김 대응 */
+@supports (-webkit-touch-callout: none) {
+    .full-height-mobile {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* ==========================================================================
+   Safe Area Insets (iPhone X+ 노치 대응)
+   ========================================================================== */
+
+@supports (padding: max(0px)) {
+    .safe-area-inset {
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+        padding-top: max(16px, env(safe-area-inset-top));
+        padding-bottom: max(16px, env(safe-area-inset-bottom));
+    }
+    
+    .nav-safe-area {
+        padding-top: max(0px, env(safe-area-inset-top));
+    }
+    
+    .footer-safe-area {
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
+    }
+}
+
+/* ==========================================================================
+   Mobile-First Error States
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 에러 메시지 모바일 최적화 */
+    .error-message {
+        padding: 12px 16px;
+        margin: 8px 0;
+        border-radius: 8px;
+        background: rgba(231, 76, 60, 0.1);
+        border: 2px solid rgba(231, 76, 60, 0.3);
+        color: #c0392b;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* 성공 메시지 */
+    .success-message {
+        padding: 12px 16px;
+        margin: 8px 0;
+        border-radius: 8px;
+        background: rgba(39, 174, 96, 0.1);
+        border: 2px solid rgba(39, 174, 96, 0.3);
+        color: #27ae60;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    /* 경고 메시지 */
+    .warning-message {
+        padding: 12px 16px;
+        margin: 8px 0;
+        border-radius: 8px;
+        background: rgba(243, 156, 18, 0.1);
+        border: 2px solid rgba(243, 156, 18, 0.3);
+        color: #e67e22;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* ==========================================================================
+   Mobile Loading States
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 로딩 스피너 */
+    .loading-spinner {
+        width: 32px;
+        height: 32px;
+        border: 3px solid rgba(var(--color-primary-rgb), 0.3);
+        border-radius: 50%;
+        border-top-color: var(--color-primary);
+        animation: spin 1s ease-in-out infinite;
+        margin: 20px auto;
+    }
+    
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    /* 스켈레톤 로딩 */
+    .skeleton {
+        background: linear-gradient(90deg, 
+            rgba(var(--color-border-rgb, 200, 200, 200), 0.2) 25%, 
+            rgba(var(--color-border-rgb, 200, 200, 200), 0.4) 37%, 
+            rgba(var(--color-border-rgb, 200, 200, 200), 0.2) 63%
+        );
+        background-size: 400% 100%;
+        animation: skeleton 1.4s ease-in-out infinite;
+        border-radius: 4px;
+    }
+    
+    @keyframes skeleton {
+        0% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+}
