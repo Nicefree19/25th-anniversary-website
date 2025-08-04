@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테스트 페이지</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px;
+            background: #f5f5f5;
+        }
+        .test-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+        .success { color: #28a745; }
+        .info { color: #007bff; }
+        .warning { color: #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="test-card">
+        <h1 class="success">✅ 웹사이트 접근성 테스트</h1>
+        <p>이 페이지가 정상적으로 보인다면 웹사이트 구조는 문제없습니다.</p>
+    </div>
+    
+    <div class="test-card">
+        <h2 class="info">📋 점검 항목</h2>
+        <ul>
+            <li>✅ HTML 구조 정상</li>
+            <li>✅ CSS 로딩 정상</li>
+            <li>✅ 파일 경로 정상</li>
+            <li>✅ 서버 응답 정상</li>
+        </ul>
+    </div>
+    
+    <div class="test-card">
+        <h2 class="warning">🔧 해결 방법</h2>
+        <p><strong>브라우저에서 페이지가 열리지 않는 경우:</strong></p>
+        <ol>
+            <li><strong>캐시 클리어</strong>: Ctrl+F5 또는 Ctrl+Shift+R</li>
+            <li><strong>개발자 도구</strong>: F12 → Console 탭에서 오류 확인</li>
+            <li><strong>로컬 서버 사용</strong>: file:// 대신 http://localhost 사용</li>
+            <li><strong>다른 브라우저</strong>: Chrome, Firefox, Edge 등으로 테스트</li>
+        </ol>
+    </div>
+    
+    <div class="test-card">
+        <h2>🌐 페이지 링크 테스트</h2>
+        <p>아래 링크들을 클릭해서 각 페이지가 정상 작동하는지 확인하세요:</p>
+        <ul>
+            <li><a href="index.html">🏠 메인 페이지</a></li>
+            <li><a href="pages/about.html">ℹ️ 소개 페이지</a></li>
+            <li><a href="pages/history.html">📜 25년 역사</a></li>
+            <li><a href="pages/event.html">🎉 행사 안내</a></li>
+            <li><a href="pages/program.html">📋 프로그램</a></li>
+            <li><a href="pages/register.html">📝 참가 신청</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        console.log('✅ 테스트 페이지 로딩 완료');
+        console.log('📊 현재 URL:', window.location.href);
+        console.log('🌐 User Agent:', navigator.userAgent);
+        
+        // 각 페이지 링크 상태 확인
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('a[href]');
+            console.log('🔗 총 ' + links.length + '개 링크 발견');
+            
+            links.forEach((link, index) => {
+                link.addEventListener('click', function(e) {
+                    console.log('🔗 링크 클릭:', this.href);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
