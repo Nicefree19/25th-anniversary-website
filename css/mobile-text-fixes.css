@@ -1,0 +1,321 @@
+/**
+ * Mobile Text Fixes - Specific Component Optimizations
+ * 특정 컴포넌트별 모바일 텍스트 최적화
+ */
+
+/* ==========================================================================
+   Hero Section Text Optimization
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .hero__title {
+        /* 메인 제목 최적화 */
+        font-size: clamp(1.6rem, 6vw, 2.4rem) !important;
+        line-height: 1.3 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 0.8rem !important;
+        letter-spacing: -0.02em !important;
+        text-align: center !important;
+        
+        /* 긴 제목의 경우 적절한 줄바꿈 */
+        hyphens: none !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    .hero__subtitle {
+        /* 부제목 최적화 */
+        font-size: clamp(1rem, 3.5vw, 1.3rem) !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .hero__description {
+        /* 설명 텍스트 최적화 */
+        font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+        line-height: 1.7 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+        
+        /* br 태그 처리 */
+        br {
+            display: block !important;
+            margin: 0.3em 0 !important;
+            content: "" !important;
+        }
+    }
+    
+    .hero__badge {
+        /* 뱃지 텍스트 */
+        font-size: clamp(0.8rem, 2.5vw, 1rem) !important;
+        word-break: keep-all !important;
+        line-height: 1.4 !important;
+    }
+}
+
+/* ==========================================================================
+   Card Components Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .card h3,
+    .event-info__title,
+    .feature__title {
+        font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+        line-height: 1.4 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .card p,
+    .event-info__content,
+    .feature__description {
+        font-size: clamp(0.9rem, 3vw, 1rem) !important;
+        line-height: 1.7 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .card .btn,
+    .event-info .btn {
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+        padding: 0.7rem 1.2rem !important;
+    }
+}
+
+/* ==========================================================================
+   Section Headers
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .section__title,
+    .page-header__title {
+        font-size: clamp(1.4rem, 5vw, 2rem) !important;
+        line-height: 1.3 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1rem !important;
+        text-align: center !important;
+    }
+    
+    .section__subtitle,
+    .page-header__subtitle {
+        font-size: clamp(1rem, 3.5vw, 1.3rem) !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1.5rem !important;
+        text-align: center !important;
+    }
+    
+    .section__description {
+        font-size: clamp(0.95rem, 3vw, 1.1rem) !important;
+        line-height: 1.7 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 1.2rem !important;
+    }
+}
+
+/* ==========================================================================
+   Footer Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .footer h3 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
+        line-height: 1.4 !important;
+        word-break: keep-all !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .footer p {
+        font-size: clamp(0.85rem, 2.8vw, 0.95rem) !important;
+        line-height: 1.6 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 0.8rem !important;
+    }
+    
+    .footer a {
+        word-break: break-all !important; /* URL, 이메일 등 */
+        line-height: 1.4 !important;
+    }
+}
+
+/* ==========================================================================
+   Navigation Text Fixes
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .mobile-nav__link {
+        font-size: 1rem !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        padding: 0.8rem 1rem !important;
+        
+        /* 긴 메뉴 항목 처리 */
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+        max-width: none !important;
+    }
+    
+    .nav__link {
+        word-break: keep-all !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+    }
+}
+
+/* ==========================================================================
+   Form Text Optimization
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .form-group label {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-bottom: 0.5rem !important;
+        display: block !important;
+    }
+    
+    input::placeholder,
+    textarea::placeholder {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        word-break: keep-all !important;
+        opacity: 0.7 !important;
+    }
+    
+    .form-help,
+    .form-description {
+        font-size: 0.85rem !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        margin-top: 0.3rem !important;
+    }
+}
+
+/* ==========================================================================
+   Timeline & History Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .timeline__year {
+        font-size: clamp(1rem, 3.5vw, 1.2rem) !important;
+        word-break: keep-all !important;
+        line-height: 1.3 !important;
+    }
+    
+    .timeline__title {
+        font-size: clamp(0.95rem, 3vw, 1.1rem) !important;
+        line-height: 1.5 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+    }
+    
+    .timeline__description {
+        font-size: clamp(0.85rem, 2.8vw, 0.95rem) !important;
+        line-height: 1.6 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+    }
+}
+
+/* ==========================================================================
+   Stats & Numbers
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .stat-card__number {
+        font-size: clamp(1.8rem, 8vw, 2.5rem) !important;
+        line-height: 1.2 !important;
+        word-break: keep-all !important;
+    }
+    
+    .stat-card__label,
+    .stat-description {
+        font-size: clamp(0.85rem, 2.8vw, 0.95rem) !important;
+        line-height: 1.4 !important;
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+    }
+}
+
+/* ==========================================================================
+   Emergency Text Fixes
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 모든 텍스트 요소에 대한 강제 최적화 */
+    * {
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    /* 특별히 문제가 되는 요소들 */
+    .long-text,
+    .description,
+    .content p {
+        line-height: 1.7 !important;
+        margin-bottom: 1.2em !important;
+    }
+    
+    /* 영문/숫자 혼재 텍스트 */
+    .mixed-text,
+    .english-korean {
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+    }
+    
+    /* URL, 이메일 등 */
+    a[href*="@"],
+    a[href*="http"],
+    .email,
+    .url {
+        word-break: break-all !important;
+        overflow-wrap: anywhere !important;
+    }
+}
+
+/* ==========================================================================
+   Very Small Screens (< 400px)
+   ========================================================================== */
+
+@media (max-width: 400px) {
+    .hero__title {
+        font-size: 1.4rem !important;
+        line-height: 1.25 !important;
+    }
+    
+    .hero__description {
+        font-size: 0.9rem !important;
+        line-height: 1.75 !important;
+    }
+    
+    .card h3,
+    .section__title {
+        font-size: 1.2rem !important;
+    }
+    
+    p, .card p {
+        font-size: 0.9rem !important;
+        line-height: 1.8 !important;
+    }
+}

@@ -72,8 +72,8 @@ function hideLoadingScreen() {
             loadingScreen.classList.add('hidden');
             setTimeout(() => {
                 loadingScreen.style.display = 'none';
-            }, 500);
-        }, 1000);
+            }, 300);
+        }, 300);
     }
 }
 

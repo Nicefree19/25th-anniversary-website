@@ -1,0 +1,419 @@
+/**
+ * Mobile Typography Enhancement
+ * 모바일 환경 한글 타이포그래피 최적화
+ */
+
+/* ==========================================================================
+   Korean Typography Base Settings
+   ========================================================================== */
+
+/* 한글 최적화 기본 설정 */
+@media (max-width: 768px) {
+    body {
+        /* 한글 단어 단위 줄바꿈 */
+        word-break: keep-all;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        
+        /* 자간 최적화 */
+        letter-spacing: -0.02em;
+        
+        /* 충분한 줄 간격 */
+        line-height: 1.7;
+        
+        /* 단락 간격 */
+        margin-bottom: 1.2em;
+    }
+    
+    /* 모든 텍스트 요소에 한글 최적화 적용 */
+    * {
+        word-break: keep-all;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+/* ==========================================================================
+   Headlines & Titles Optimization
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6 {
+        /* 제목 줄바꿈 최적화 */
+        word-break: keep-all;
+        line-height: 1.4;
+        letter-spacing: -0.03em;
+        margin-bottom: 0.8em;
+        
+        /* 긴 제목의 경우 적절한 줄바꿈 */
+        overflow-wrap: break-word;
+        hyphens: none; /* 한글은 하이픈 사용 안함 */
+    }
+    
+    h1 {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        line-height: 1.3;
+        margin-bottom: 0.6em;
+    }
+    
+    h2 {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        line-height: 1.35;
+        margin-bottom: 0.7em;
+    }
+    
+    h3 {
+        font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+        line-height: 1.4;
+        margin-bottom: 0.8em;
+    }
+}
+
+/* ==========================================================================
+   Paragraph & Body Text Enhancement
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    p {
+        /* 본문 텍스트 최적화 */
+        line-height: 1.75;
+        margin-bottom: 1.2em;
+        letter-spacing: -0.01em;
+        
+        /* 적절한 단락 들여쓰기 (선택적) */
+        text-indent: 0;
+        
+        /* 양쪽 정렬 대신 왼쪽 정렬 (모바일에서 더 읽기 좋음) */
+        text-align: left;
+    }
+    
+    /* 강조 텍스트 */
+    strong, b {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+    
+    /* 기울임 텍스트 (한글에서는 사용 제한) */
+    em, i {
+        font-style: normal;
+        font-weight: 500;
+        color: var(--color-primary, #d2691e);
+    }
+}
+
+/* ==========================================================================
+   Lists Optimization
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    ul, ol {
+        padding-left: 1.2em;
+        margin-bottom: 1.2em;
+    }
+    
+    li {
+        line-height: 1.7;
+        margin-bottom: 0.5em;
+        word-break: keep-all;
+        word-wrap: break-word;
+    }
+    
+    /* 중첩 리스트 */
+    li ul, li ol {
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+    }
+}
+
+/* ==========================================================================
+   Card & Component Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* 카드 내 텍스트 */
+    .card p,
+    .event-info__content,
+    .feature__description {
+        line-height: 1.6;
+        margin-bottom: 1em;
+        font-size: 0.95rem;
+    }
+    
+    /* 카드 제목 */
+    .card h3,
+    .event-info__title,
+    .feature__title {
+        line-height: 1.4;
+        word-break: keep-all;
+        margin-bottom: 0.6em;
+    }
+    
+    /* 설명 텍스트 */
+    .description,
+    .subtitle {
+        line-height: 1.65;
+        word-break: keep-all;
+        word-wrap: break-word;
+    }
+}
+
+/* ==========================================================================
+   Navigation & Menu Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .nav__link,
+    .mobile-nav__link {
+        /* 네비게이션 텍스트 최적화 */
+        word-break: keep-all;
+        line-height: 1.5;
+        padding: 0.75rem 1rem;
+        
+        /* 긴 메뉴 이름의 경우 줄바꿈 */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 200px;
+    }
+    
+    /* 모바일 메뉴에서는 줄바꿈 허용 */
+    .mobile-nav__link {
+        white-space: normal;
+        max-width: none;
+        word-wrap: break-word;
+    }
+}
+
+/* ==========================================================================
+   Button & CTA Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .btn,
+    button,
+    .cta-button {
+        /* 버튼 텍스트 최적화 */
+        word-break: keep-all;
+        line-height: 1.4;
+        padding: 0.75rem 1.5rem;
+        
+        /* 긴 버튼 텍스트 처리 */
+        hyphens: none;
+        overflow-wrap: break-word;
+    }
+    
+    /* 작은 버튼의 경우 */
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        line-height: 1.3;
+    }
+}
+
+/* ==========================================================================
+   Form Elements Text
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    label {
+        line-height: 1.5;
+        margin-bottom: 0.5em;
+        word-break: keep-all;
+        display: block;
+    }
+    
+    input,
+    textarea,
+    select {
+        line-height: 1.4;
+        padding: 0.75rem;
+        
+        /* 플레이스홀더 텍스트 */
+        &::placeholder {
+            word-break: keep-all;
+            line-height: 1.4;
+        }
+    }
+    
+    /* 에러 메시지 */
+    .error-message,
+    .validation-message {
+        line-height: 1.5;
+        word-break: keep-all;
+        word-wrap: break-word;
+        margin-top: 0.25rem;
+    }
+}
+
+/* ==========================================================================
+   Table Text Enhancement
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.9rem;
+    }
+    
+    th, td {
+        line-height: 1.5;
+        word-break: keep-all;
+        word-wrap: break-word;
+        padding: 0.5rem 0.25rem;
+        
+        /* 긴 내용 처리 */
+        max-width: 120px;
+        overflow-wrap: break-word;
+    }
+    
+    /* 테이블 헤더 */
+    th {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+    }
+}
+
+/* ==========================================================================
+   Quote & Blockquote
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    blockquote {
+        line-height: 1.7;
+        word-break: keep-all;
+        word-wrap: break-word;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        font-size: 1.05rem;
+        letter-spacing: -0.01em;
+    }
+    
+    blockquote p {
+        margin-bottom: 0.8em;
+    }
+    
+    blockquote p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* ==========================================================================
+   Address & Contact Information
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    address,
+    .contact-info,
+    .address-info {
+        line-height: 1.6;
+        word-break: keep-all;
+        word-wrap: break-word;
+        margin-bottom: 1rem;
+    }
+    
+    /* 전화번호, 이메일 등 */
+    .phone,
+    .email,
+    .address {
+        display: block;
+        margin-bottom: 0.3em;
+    }
+}
+
+/* ==========================================================================
+   Long Content & Articles
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    article,
+    .content,
+    .long-text {
+        /* 긴 글 읽기 최적화 */
+        line-height: 1.8;
+        word-break: keep-all;
+        word-wrap: break-word;
+        
+        /* 단락 구분 명확화 */
+        p + p {
+            margin-top: 1.4em;
+        }
+        
+        /* 섹션 구분 */
+        h2 + p,
+        h3 + p {
+            margin-top: 0.8em;
+        }
+    }
+}
+
+/* ==========================================================================
+   Special Cases & Edge Cases
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    /* URL, 이메일 등 영문 텍스트 */
+    .url,
+    .email,
+    .english-text,
+    [lang="en"] {
+        word-break: break-all;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* 코드, 기술 용어 */
+    code,
+    .code,
+    .technical-term {
+        word-break: break-all;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+    }
+    
+    /* 긴 단어 (영문 포함) */
+    .long-word {
+        word-break: break-all;
+        overflow-wrap: anywhere;
+    }
+    
+    /* 숫자가 포함된 텍스트 */
+    .number-text {
+        word-break: keep-all;
+        white-space: nowrap;
+    }
+}
+
+/* ==========================================================================
+   Responsive Font Sizes
+   ========================================================================== */
+
+@media (max-width: 480px) {
+    /* 매우 작은 화면에서 추가 최적화 */
+    body {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    
+    h1 { font-size: clamp(1.4rem, 6vw, 2rem); }
+    h2 { font-size: clamp(1.2rem, 5vw, 1.6rem); }
+    h3 { font-size: clamp(1.1rem, 4vw, 1.4rem); }
+    
+    p {
+        line-height: 1.8;
+        margin-bottom: 1.3em;
+    }
+}
+
+/* ==========================================================================
+   Print Styles (Optional)
+   ========================================================================== */
+
+@media print {
+    * {
+        word-break: keep-all !important;
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+    }
+    
+    p {
+        margin-bottom: 0.8em !important;
+    }
+}

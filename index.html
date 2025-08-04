@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/mobile-enhancements.css">
     <link rel="stylesheet" href="./css/autumn-leaves.css">
+    <link rel="stylesheet" href="./css/loading-optimization.css">
+    <link rel="stylesheet" href="./css/mobile-typography.css">
+    <link rel="stylesheet" href="./css/mobile-text-fixes.css">
     
     <!-- External Libraries -->
     <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -47,6 +50,42 @@
     <!-- Preload Critical Resources -->
     <link rel="preload" href="./assets/fonts/Pretendard-Bold.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="./assets/images/event-images/hero_image.png" as="image">
+    
+    <!-- FOUC Prevention Script -->
+    <script>
+        document.documentElement.className += ' loaded';
+        
+        // 이미지 로딩 완료 감지
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            let loadedImages = 0;
+            
+            function imageLoaded() {
+                loadedImages++;
+                if (loadedImages === images.length) {
+                    document.documentElement.classList.add('images-loaded');
+                }
+            }
+            
+            images.forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                    imageLoaded();
+                } else {
+                    img.addEventListener('load', function() {
+                        this.classList.add('loaded');
+                        imageLoaded();
+                    });
+                    img.addEventListener('error', imageLoaded);
+                }
+            });
+            
+            // 이미지가 없으면 바로 완료 처리
+            if (images.length === 0) {
+                document.documentElement.classList.add('images-loaded');
+            }
+        });
+    </script>
 </head>
 <body class="autumn-theme">
     <!-- Autumn Atmosphere Background -->
@@ -146,7 +185,7 @@
                     </p>
                     
                     <p class="hero__description">
-                        1999년부터 시작된 우리의 이야기가 어느덧 25년이 되었습니다.<br>
+                        2000년 6월부터 시작된 우리의 이야기가 어느덧 25주년을 맞이했습니다.<br>
                         회원 중심, 가족 참여형 홈커밍데이 형식의 가을 운동회로 여러분을 초대합니다.
                     </p>
                     
@@ -329,7 +368,7 @@
                     <img src="./assets/images/event-images/footer_logo_tree_book.png" alt="어린이도서연구회 로고" class="footer__logo" style="height: 60px; margin-bottom: 15px;">
                     <h3>어린이도서연구회 은평지회</h3>
                     <p>
-                        1999년부터 시작된 우리의 이야기<br>
+                        2000년 6월부터 시작된 우리의 이야기<br>
                         함께 읽고, 함께 자라는 공동체
                     </p>
                     <div class="footer__social">
