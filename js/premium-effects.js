@@ -19,7 +19,7 @@ class PremiumEffectsManager {
         const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         
         return {
-            enableParticles: !prefersReducedMotion && !isLowPowerMode,
+            enableParticles: false, // Enhanced Autumn Leaves 시스템 사용으로 비활성화
             enableAdvancedEffects: !isMobile && !isLowPowerMode,
             performanceLevel: isLowPowerMode ? 'minimal' : (isMobile ? 'medium' : 'high'),
             adaptiveQuality: true

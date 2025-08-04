@@ -12,10 +12,16 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mobile-enhancements.css">
+    <link rel="stylesheet" href="../css/autumn-leaves.css">
     <link rel="stylesheet" href="../css/autumn-sports-theme.css">
     <link rel="stylesheet" href="../css/program.css">
 </head>
-<body>
+<body class="autumn-theme">
+    <!-- Autumn Atmosphere Background -->
+    <div class="autumn-atmosphere" id="autumn-atmosphere"></div>
+    
+    <!-- Leaf Collection at Bottom -->
+    <div class="leaf-collection" id="leaf-collection"></div>
     <!-- 가을 낙엽 효과 -->
     <div class="autumn-leaves">
         <span class="leaf">🍂</span>
@@ -322,5 +328,28 @@
     <script src="../js/navigation.js" defer></script>
     <script src="../js/mobile-navigation-fix.js" defer></script>
     <script src="../js/animations.js" defer></script>
+    <script src="../js/enhanced-autumn-leaves.js" defer></script>
+    
+    <script>
+        // 가을 분위기 활성화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 분위기 배경 활성화
+            setTimeout(() => {
+                const atmosphere = document.getElementById('autumn-atmosphere');
+                if (atmosphere) {
+                    atmosphere.classList.add('active');
+                }
+            }, 1500);
+            
+            // 낙엽 시스템이 로드되면 테마 설정
+            const checkAutumnLeaves = setInterval(() => {
+                if (window.AutumnLeaves) {
+                    // 가을 테마로 설정
+                    window.AutumnLeaves.setTheme('autumn');
+                    clearInterval(checkAutumnLeaves);
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>

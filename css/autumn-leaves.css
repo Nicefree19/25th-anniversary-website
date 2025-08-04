@@ -1,0 +1,337 @@
+/**
+ * Autumn Leaves Animation Styles
+ * 가을 낙엽 애니메이션 스타일링
+ */
+
+/* ==========================================================================
+   Autumn Leaves Canvas Styling
+   ========================================================================== */
+
+#autumn-leaves-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+    transition: opacity 0.5s ease;
+}
+
+/* 다크 모드에서 blend mode 조정 */
+@media (prefers-color-scheme: dark) {
+    #autumn-leaves-canvas {
+        mix-blend-mode: screen;
+        opacity: 0.6;
+    }
+}
+
+/* ==========================================================================
+   Enhanced Background Effects for Autumn Theme
+   ========================================================================== */
+
+/* 가을 테마 배경 그라디언트 오버레이 */
+.autumn-atmosphere {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 223, 186, 0.03) 0%,
+        rgba(255, 140, 0, 0.02) 20%,
+        rgba(205, 133, 63, 0.015) 50%,
+        rgba(139, 69, 19, 0.01) 80%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.autumn-atmosphere.active {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Seasonal UI Enhancements
+   ========================================================================== */
+
+/* 가을 테마가 활성화되었을 때 UI 요소들의 미묘한 변화 */
+body.autumn-theme {
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 140, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(205, 133, 63, 0.03) 0%, transparent 50%);
+}
+
+body.autumn-theme .hero {
+    background-image: 
+        radial-gradient(circle at 30% 40%, rgba(255, 223, 186, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(255, 140, 0, 0.05) 0%, transparent 50%);
+}
+
+/* ==========================================================================
+   Leaf Collection Animation (미묘한 인터랙티브 요소)
+   ========================================================================== */
+
+/* 화면 하단에 쌓이는 낙엽 더미 효과 */
+.leaf-collection {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    pointer-events: none;
+    z-index: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(139, 69, 19, 0.02) 0%,
+        rgba(205, 133, 63, 0.01) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    animation: leafCollectionGrow 3s ease-out forwards;
+    animation-delay: 5s; /* 낙엽이 충분히 떨어진 후 시작 */
+}
+
+@keyframes leafCollectionGrow {
+    from {
+        opacity: 0;
+        height: 0px;
+    }
+    to {
+        opacity: 1;
+        height: 50px;
+    }
+}
+
+/* ==========================================================================
+   Wind Effect Indicators (바람 방향 시각적 힌트)
+   ========================================================================== */
+
+.wind-indicator {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wind-indicator.visible {
+    opacity: 0.3;
+}
+
+.wind-arrow {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.2) 0%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    position: relative;
+    transform-origin: center;
+    transition: transform 0.5s ease;
+}
+
+.wind-arrow::before {
+    content: '💨';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+/* ==========================================================================
+   Performance Optimizations
+   ========================================================================== */
+
+/* GPU 가속 및 성능 최적화 */
+#autumn-leaves-canvas,
+.autumn-atmosphere,
+.leaf-collection {
+    will-change: opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    #autumn-leaves-canvas {
+        opacity: 0.7; /* 모바일에서 약간 더 투명하게 */
+    }
+    
+    .autumn-atmosphere {
+        opacity: 0.8;
+    }
+    
+    .wind-indicator {
+        display: none; /* 모바일에서는 바람 표시기 숨김 */
+    }
+    
+    .leaf-collection {
+        height: 30px; /* 모바일에서 더 작게 */
+    }
+}
+
+/* 성능이 낮은 디바이스에서 효과 간소화 */
+@media (max-width: 480px) {
+    #autumn-leaves-canvas {
+        opacity: 0.5;
+    }
+    
+    .autumn-atmosphere {
+        display: none;
+    }
+    
+    .leaf-collection {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   Accessibility Considerations
+   ========================================================================== */
+
+/* 움직임 민감성 사용자를 위한 설정 */
+@media (prefers-reduced-motion: reduce) {
+    #autumn-leaves-canvas,
+    .autumn-atmosphere,
+    .leaf-collection,
+    .wind-indicator {
+        display: none !important;
+    }
+}
+
+/* 고대비 모드에서 가시성 향상 */
+@media (prefers-contrast: high) {
+    #autumn-leaves-canvas {
+        opacity: 0.9;
+        mix-blend-mode: normal;
+    }
+}
+
+/* ==========================================================================
+   Theme Transitions
+   ========================================================================== */
+
+/* 계절 테마 전환 애니메이션 */
+.theme-transition {
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 가을에서 겨울로 전환 효과 (추후 확장 가능) */
+.winter-transition #autumn-leaves-canvas {
+    animation: fadeToWinter 2s ease-out forwards;
+}
+
+@keyframes fadeToWinter {
+    0% {
+        opacity: 0.85;
+        filter: hue-rotate(0deg) saturate(1);
+    }
+    50% {
+        opacity: 0.6;
+        filter: hue-rotate(30deg) saturate(0.7);
+    }
+    100% {
+        opacity: 0.3;
+        filter: hue-rotate(60deg) saturate(0.3);
+    }
+}
+
+/* ==========================================================================
+   Interactive Elements Enhancement
+   ========================================================================== */
+
+/* 낙엽과 상호작용하는 UI 요소들의 미묘한 효과 */
+.card:hover,
+.btn:hover {
+    position: relative;
+}
+
+.card:hover::after,
+.btn:hover::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 140, 0, 0.1) 0%,
+        transparent 70%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0;
+    animation: autumnGlow 0.5s ease-out forwards;
+}
+
+@keyframes autumnGlow {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   Debug and Control Panel (개발자 도구)
+   ========================================================================== */
+
+.autumn-debug-panel {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 12px;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.autumn-debug-panel.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.debug-controls {
+    margin-top: 10px;
+}
+
+.debug-controls button {
+    margin: 2px;
+    padding: 4px 8px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+.debug-controls button:hover {
+    background: #555;
+}
+
+/* 개발 중에만 표시 (프로덕션에서는 숨김) */
+body:not(.development) .autumn-debug-panel {
+    display: none;
+}

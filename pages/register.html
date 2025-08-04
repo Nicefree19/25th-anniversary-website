@@ -16,11 +16,17 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/mobile-enhancements.css">
+    <link rel="stylesheet" href="../css/autumn-leaves.css">
     
     <!-- External Libraries -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
-<body>
+<body class="autumn-theme">
+    <!-- Autumn Atmosphere Background -->
+    <div class="autumn-atmosphere" id="autumn-atmosphere"></div>
+    
+    <!-- Leaf Collection at Bottom -->
+    <div class="leaf-collection" id="leaf-collection"></div>
     <!-- Skip to Main Content -->
     <a href="#main" class="skip-link">본문으로 바로가기</a>
     
@@ -216,6 +222,7 @@
     <script src="../js/navigation.js" defer></script>
     <script src="../js/mobile-navigation-fix.js" defer></script>
     <script src="../js/animations.js" defer></script>
+    <script src="../js/enhanced-autumn-leaves.js" defer></script>
     
     <style>
         /* Page-specific styles */
@@ -404,5 +411,27 @@
             text-decoration: underline;
         }
     </style>
+    
+    <script>
+        // 가을 분위기 활성화
+        document.addEventListener('DOMContentLoaded', function() {
+            // 분위기 배경 활성화
+            setTimeout(() => {
+                const atmosphere = document.getElementById('autumn-atmosphere');
+                if (atmosphere) {
+                    atmosphere.classList.add('active');
+                }
+            }, 1500);
+            
+            // 낙엽 시스템이 로드되면 테마 설정
+            const checkAutumnLeaves = setInterval(() => {
+                if (window.AutumnLeaves) {
+                    // 가을 테마로 설정
+                    window.AutumnLeaves.setTheme('autumn');
+                    clearInterval(checkAutumnLeaves);
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
