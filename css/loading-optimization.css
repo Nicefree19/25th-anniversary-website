@@ -137,13 +137,33 @@ html.loaded {
     font-family: system-ui, -apple-system, sans-serif;
 }
 
-/* 이미지 로딩 상태 */
+/* 이미지 로딩 상태 - 애니메이션과 호환되도록 개선 */
 img {
     opacity: 0;
     transition: opacity 0.3s ease;
+    will-change: opacity;
 }
 
 img.loaded {
+    opacity: 1;
+}
+
+/* AOS 애니메이션과 충돌 방지 */
+img[data-aos] {
+    opacity: 1 !important;
+}
+
+img[data-aos].loaded {
+    opacity: 1 !important;
+}
+
+/* 히어로 로고 특별 처리 - 애니메이션 완료 후 표시 */
+.hero__logo {
+    opacity: 0;
+    transition: opacity 0.5s ease 0.3s; /* 0.3초 지연 후 페이드인 */
+}
+
+.hero__logo.loaded {
     opacity: 1;
 }
 

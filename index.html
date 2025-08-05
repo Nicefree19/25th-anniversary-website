@@ -114,7 +114,7 @@
         <div class="container">
             <div class="header__inner">
                 <a href="./index.html" class="header__logo">
-                    <img src="./assets/images/logo.png" alt="어린이도서연구회 로고" class="header__logo-image">
+                    <img src="./assets/images/logo.png" alt="어린이도서연구회 로고" class="header__logo-image loaded">
                     <span>은평지회</span>
                 </a>
                 
@@ -169,7 +169,7 @@
             
             <div class="container">
                 <div class="hero__content" data-aos="fade-up">
-                    <img src="./assets/images/logo.png" alt="어린이도서연구회 로고" class="hero__logo" data-aos="zoom-in">
+                    <img src="./assets/images/logo.png" alt="어린이도서연구회 로고" class="hero__logo loaded" data-aos="zoom-in">
                     
                     <div class="hero__badge animate-float">
                         <span>🎉</span>
@@ -365,7 +365,7 @@
         <div class="container">
             <div class="footer__grid">
                 <div class="footer__section">
-                    <img src="./assets/images/event-images/footer_logo_tree_book.png" alt="어린이도서연구회 로고" class="footer__logo" style="height: 60px; margin-bottom: 15px;">
+                    <img src="./assets/images/event-images/footer_logo_tree_book.png" alt="어린이도서연구회 로고" class="footer__logo loaded" style="height: 60px; margin-bottom: 15px;">
                     <h3>어린이도서연구회 은평지회</h3>
                     <p>
                         2000년 6월부터 시작된 우리의 이야기<br>
@@ -440,10 +440,28 @@
     <script src="./js/text-animations.js" defer></script>
     <script src="./js/micro-interactions.js" defer></script>
     <script src="./js/premium-effects.js" defer></script>
+    <script src="./js/image-loading.js" defer></script>
     
     <script>
-        // 가을 분위기 활성화
+        // 가을 분위기 활성화 및 이미지 로딩 최적화
         document.addEventListener('DOMContentLoaded', function() {
+            // 이미지 자동 로딩 처리
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (img.complete && img.naturalHeight !== 0) {
+                    // 이미 로드된 이미지
+                    img.classList.add('loaded');
+                } else {
+                    // 로드 완료 시 loaded 클래스 추가
+                    img.addEventListener('load', function() {
+                        this.classList.add('loaded');
+                    });
+                    img.addEventListener('error', function() {
+                        this.classList.add('loaded'); // 에러 시에도 표시
+                    });
+                }
+            });
+
             // 분위기 배경 활성화
             setTimeout(() => {
                 const atmosphere = document.getElementById('autumn-atmosphere');
