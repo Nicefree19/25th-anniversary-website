@@ -102,17 +102,33 @@
         <section class="section">
             <div class="container">
                 <div class="registration-info" data-aos="fade-up">
-                    <div class="registration-card" style="display: flex; gap: 30px; align-items: center;">
-                        <div style="flex: 1;">
-                            <div class="registration-icon">📝</div>
-                            <h2 class="registration-title">네이버폼으로 간편하게 신청하세요!</h2>
-                            <p class="registration-description">
-                                25주년 기념 가을 운동회 참가 신청은 네이버폼을 통해 진행됩니다.<br>
-                                아래 버튼을 클릭하여 신청서를 작성해 주세요.
-                            </p>
-                        </div>
-                        <div style="flex: 0 0 250px;">
-                            <img src="../assets/images/event-images/program_towel_gift.png" alt="25주년 기념품" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                    <!-- 테스트 이미지 영역 -->
+                    <div style="text-align: center; margin: 20px 0; padding: 15px; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <h4>이미지 표시 테스트 - loaded 클래스 적용</h4>
+                        <img src="../assets/images/logo.png" alt="로고" class="loaded" style="width: 80px; height: auto; margin: 10px;">
+                        <img src="../assets/images/event-images/hero_image.png" alt="히어로 이미지" class="loaded" style="width: 150px; height: auto; margin: 10px; border: 1px solid #ddd;" loading="lazy">
+                        <p><small>위의 이미지들이 이제 보이시나요?</small></p>
+                    </div>
+                    
+                    <div class="registration-card">
+                        <div class="registration-icon">📝</div>
+                        <h2 class="registration-title">네이버폼으로 간편하게 신청하세요!</h2>
+                        <p class="registration-description">
+                            25주년 기념 가을 운동회 참가 신청은 네이버폼을 통해 진행됩니다.<br>
+                            아래 버튼을 클릭하여 신청서를 작성해 주세요.
+                        </p>
+                        
+                        <!-- 기념품 이미지 - 간단한 방식 -->
+                        <div style="margin: 20px 0; text-align: center;">
+                            <img src="../assets/images/event-images/program_towel_gift.png" 
+                                 alt="25주년 기념품" 
+                                 class="loaded"
+                                 style="max-width: 200px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+                                 loading="lazy"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                            <div style="display: none; padding: 20px; background: #f0f0f0; border-radius: 8px; color: #666;">
+                                🎁 기념품 이미지 (로딩 중...)
+                            </div>
                         </div>
                     </div>
                         
